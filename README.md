@@ -29,6 +29,20 @@ npx serve .
 
 或直接双击 `index.html`（部分浏览器可能因本地文件协议限制 localStorage，仍推荐用本地服务器）。
 
+## 部署到 Netlify
+
+项目自带 `netlify.toml`，无需构建步骤，`publish = "."`：
+
+**一键部署（推荐）**
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bananawong/wtf_galgame)
+
+**或手动操作**
+
+- Netlify 后台 → *Add new site → Import from Git* → 选中本仓库 → 默认设置直接 Deploy
+- Netlify CLI：`npm i -g netlify-cli && netlify deploy --prod --dir=.`
+- 本地 zip 拖拽：把整个项目文件夹拖到 [app.netlify.com/drop](https://app.netlify.com/drop)
+
 ## 操作说明
 
 | 操作 | 说明 |
