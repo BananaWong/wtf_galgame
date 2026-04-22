@@ -45,7 +45,12 @@
     gameScreen: $("#game-screen"),
     endingScreen: $("#ending-screen"),
     sceneBg: $("#scene-bg"),
-    sprite: $("#character-sprite"),
+    sceneBgImage: $("#scene-bg-image"),
+    charSlots: {
+      left:   document.querySelector('.char-slot[data-slot="left"]'),
+      center: document.querySelector('.char-slot[data-slot="center"]'),
+      right:  document.querySelector('.char-slot[data-slot="right"]'),
+    },
     affectionName: $("#affection-name"),
     heartRow: $("#heart-row"),
     affectionNum: $("#affection-num"),
@@ -83,12 +88,33 @@
     el.affectionNum.textContent = `${state.affection}/100`;
   }
 
-  // ---- HUD 更新 --------------------------------------------------
+  // ---- HUD / 场景 ------------------------------------------------
   function setScene(cfg) {
-    const bgChanged = cfg.bg && cfg.bg !== state.bg;
+    const bgChanged = (cfg.bg && cfg.bg !== state.bg) || (cfg.bgImage && cfg.bgImage !== state.bgImage);
     if (cfg.bg) {
       state.bg = cfg.bg;
       el.sceneBg.className = "scene-bg " + cfg.bg;
+    }
+    // 图片背景优先于 CSS 场景：有 bgImage 就用，没有就淡出回退到 CSS
+    if (cfg.bgImage !== undefined) {
+      state.bgImage = cfg.bgImage;
+      if (cfg.bgImage) {
+        const path = resolveBgImagePath(cfg.bgImage);
+        preloadImage(path).then((ok) => {
+          if (!ok) {
+            // 图片加载失败：清除图片层，留下 CSS 场景作为 fallback
+            el.sceneBgImage.classList.remove("visible");
+            el.sceneBgImage.style.backgroundImage = "";
+            console.warn("背景图加载失败：" + path + "（已回退到 CSS 场景）");
+          } else {
+            el.sceneBgImage.style.backgroundImage = `url("${path}")`;
+            el.sceneBgImage.classList.add("visible");
+          }
+        });
+      } else {
+        el.sceneBgImage.classList.remove("visible");
+        el.sceneBgImage.style.backgroundImage = "";
+      }
     }
     if (cfg.place !== undefined) { state.place = cfg.place; el.place.textContent = cfg.place || "——"; }
     if (cfg.time !== undefined)  { state.time  = cfg.time;  el.time.textContent  = cfg.time  || "——"; }
@@ -101,6 +127,123 @@
     if (bgChanged && window.Sound) {
       window.Sound.sfx.sceneTransition();
     }
+    // 场景切换时如果指定了 clearChars，把所有立绘撤走
+    if (cfg.clearChars) clearAllCharacters();
+  }
+
+  // ---- 立绘系统 --------------------------------------------------
+  // 角色注册：支持 window.CHARACTERS 在 game.js 中预先声明
+  // 格式示例：
+  //   window.CHARACTERS = {
+  //     jensen: {
+  //       name: "黄仁勋",
+  //       dir:  "assets/char/jensen/",       // 可选；默认 assets/char/{id}/
+  //       ext:  "png",                        // 可选；默认 png
+  //       default: "smile",                   // 可选；没给 expression 时使用
+  //       // 文件名规则：{dir}{id}_{expression}[_{pose}].{ext}
+  //       //   expression: 如 smile / shy / serious
+  //       //   pose:       可选；如 stand / hand_chin / leaning
+  //     }
+  //   };
+  function resolveBgImagePath(nameOrPath) {
+    if (/^(https?:|\/|data:)/i.test(nameOrPath)) return nameOrPath;
+    if (nameOrPath.includes("/")) return nameOrPath;
+    return "assets/bg/" + nameOrPath;
+  }
+  function resolveCharImagePath(charId, expression, pose) {
+    const reg = (window.CHARACTERS && window.CHARACTERS[charId]) || {};
+    const dir = reg.dir || ("assets/char/" + charId + "/");
+    const ext = reg.ext || "png";
+    const parts = [charId];
+    if (expression) parts.push(expression);
+    if (pose) parts.push(pose);
+    return dir + parts.join("_") + "." + ext;
+  }
+  function preloadImage(src) {
+    return new Promise((resolve) => {
+      if (!src) return resolve(false);
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = src;
+    });
+  }
+
+  // 当前站位上的角色状态：{ slot: { id, expression, pose } }
+  state.sprites = state.sprites || { left: null, center: null, right: null };
+
+  // 展示或更新某槽位立绘
+  function showCharacter({ id, expression, pose, slot = "center", hide = false, placeholder = false }) {
+    const slotEl = el.charSlots[slot];
+    if (!slotEl) return;
+    if (hide) {
+      slotEl.classList.remove("visible", "placeholder");
+      slotEl.style.backgroundImage = "";
+      state.sprites[slot] = null;
+      return;
+    }
+    if (!id) return;
+    const reg = (window.CHARACTERS && window.CHARACTERS[id]) || {};
+    const expr = expression || reg.default || "smile";
+    const path = resolveCharImagePath(id, expr, pose);
+    preloadImage(path).then((ok) => {
+      if (ok) {
+        slotEl.classList.remove("placeholder");
+        slotEl.style.backgroundImage = `url("${path}")`;
+      } else {
+        // 图片加载失败：如果是占位需求，则显示 CSS 占位轮廓；否则清空
+        if (placeholder) {
+          slotEl.classList.add("placeholder");
+          slotEl.style.backgroundImage = "";
+        } else {
+          // 尝试退回到 default 表情
+          if (expr !== (reg.default || "smile")) {
+            const fallback = resolveCharImagePath(id, reg.default || "smile", null);
+            preloadImage(fallback).then((ok2) => {
+              if (ok2) {
+                slotEl.classList.remove("placeholder");
+                slotEl.style.backgroundImage = `url("${fallback}")`;
+              } else {
+                slotEl.classList.add("placeholder");
+                slotEl.style.backgroundImage = "";
+              }
+            });
+          } else {
+            slotEl.classList.add("placeholder");
+            slotEl.style.backgroundImage = "";
+          }
+        }
+      }
+      slotEl.classList.add("visible");
+    });
+    state.sprites[slot] = { id, expression: expr, pose: pose || null };
+  }
+  function clearAllCharacters() {
+    Object.keys(el.charSlots).forEach((slot) => showCharacter({ slot, hide: true }));
+  }
+  function updateSpeakerFocus(speakerId) {
+    // 把非说话者压暗
+    Object.entries(state.sprites).forEach(([slot, sprite]) => {
+      const slotEl = el.charSlots[slot];
+      if (!sprite || !slotEl) return;
+      const isSpeaker = sprite.id === speakerId;
+      slotEl.classList.toggle("dimmed", speakerId != null && !isSpeaker);
+    });
+  }
+  // 通过说话者名字反查角色 id（便于在 text 行只写名字就联动立绘）
+  function charIdByName(name) {
+    if (!name || !window.CHARACTERS) return null;
+    for (const [id, reg] of Object.entries(window.CHARACTERS)) {
+      if (reg.name === name || id === name) return id;
+    }
+    return null;
+  }
+  function findSlotOf(charId) {
+    if (!charId) return null;
+    for (const [slot, sprite] of Object.entries(state.sprites)) {
+      if (sprite && sprite.id === charId) return slot;
+    }
+    return null;
   }
 
   function changeAffection(delta, reason) {
@@ -215,9 +358,36 @@
         render();
         break;
       }
+      case "char": {
+        // 显示/更新/隐藏立绘
+        // 支持单个：{ type:"char", id, expression, pose, slot, hide }
+        // 支持批量：{ type:"char", multi:[{id,expression,pose,slot},{hide:true, slot:"left"}] }
+        if (line.multi && Array.isArray(line.multi)) {
+          line.multi.forEach((c) => showCharacter({ ...c, placeholder: line.placeholder }));
+        } else if (line.clear) {
+          clearAllCharacters();
+        } else {
+          showCharacter({ ...line, placeholder: line.placeholder });
+        }
+        state.index++;
+        render();
+        break;
+      }
       case "text": {
         clearChoices();
         state.speaker = line.speaker || "";
+        // text 行上的 expression / pose / slot 作为快捷方式：更新当前说话者立绘
+        const charId = line.charId || charIdByName(line.speaker);
+        if (charId && (line.expression || line.pose || line.slot)) {
+          showCharacter({
+            id: charId,
+            expression: line.expression,
+            pose: line.pose,
+            slot: line.slot || (state.sprites && findSlotOf(charId)) || "center",
+            placeholder: line.placeholder,
+          });
+        }
+        updateSpeakerFocus(charId);
         pushHistory(line);
         typeText(line.text, line.speaker, onTextDone);
         break;
@@ -225,6 +395,7 @@
       case "narration": {
         clearChoices();
         state.speaker = "";
+        updateSpeakerFocus(null); // 旁白时所有立绘正常亮度
         pushHistory(line);
         typeText(line.text, "旁白", onTextDone);
         break;
@@ -600,6 +771,7 @@
     state.affection = 0;
     state.flags = {};
     state.history = [];
+    clearAllCharacters();
     renderHearts();
     switchScreen("game");
     render();

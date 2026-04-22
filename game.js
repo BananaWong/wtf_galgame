@@ -2,21 +2,45 @@
    与黄总的未来 · 剧本脚本
    结构：GAME_SCRIPT[sceneId] = [line, line, ...]
    line 类型：
-     { type: "scene",     place, time, weather, bg, charName }
-     { type: "text",      speaker, text }
+     { type: "scene",     place, time, weather, bg, bgImage, mood, charName, clearChars }
+     { type: "char",      id, expression, pose, slot, hide, clear, multi, placeholder }
+     { type: "text",      speaker, text, expression?, pose?, slot?, charId?, placeholder? }
      { type: "narration", text }
      { type: "choice",    choices: [{text, affection, goto?, flag?}] }
      { type: "affection", delta, reason }
      { type: "flag",      key, value }
      { type: "goto",      target }
      { type: "ending",    title, text, note }
+
+   资源路径约定：
+     - 背景：assets/bg/{name}     或写完整路径 assets/bg/foo.jpg
+     - 立绘：assets/char/{id}/{id}_{expression}[_{pose}].png
+       例：assets/char/jensen/jensen_smile.png
+           assets/char/jensen/jensen_shy.png
+           assets/char/jensen/jensen_smile_hand_chin.png
    ================================================================= */
+
+// ---- 角色注册表 ------------------------------------------------
+window.CHARACTERS = {
+  jensen: {
+    name: "黄仁勋",
+    dir: "assets/char/jensen/",
+    ext: "png",
+    default: "smile",
+    // 常用表情（素材缺失时 showCharacter 会自动 fallback 到 default 或占位）
+    expressions: ["neutral", "smile", "laugh", "shy", "serious", "surprised", "loving", "sad"],
+    // 常用姿势
+    poses: ["stand", "hand_chin", "arms_crossed", "leaning"],
+  },
+  // 可在此处继续添加助理、竞争对手等角色：
+  // colette: { name: "Colette", dir: "assets/char/colette/", default: "neutral" },
+};
 
 window.GAME_SCRIPT = {
 
   // ====================== 序章：入职 NVIDIA =======================
   prologue: [
-    { type: "scene", place: "NVIDIA 总部 · 大厅", time: "清晨 09:02", weather: "晴朗", bg: "scene-lobby", charName: "黄仁勋" },
+    { type: "scene", place: "NVIDIA 总部 · 大厅", time: "清晨 09:02", weather: "晴朗", bg: "scene-lobby", mood: "calm", charName: "黄仁勋", clearChars: true },
     { type: "narration", text: "2024 年，一个改变世界的年份。" },
     { type: "narration", text: "而对你来说，改变人生的，是今天这张 NVIDIA 的员工胸牌。" },
     { type: "text", speaker: "你", text: "（深呼吸）……终于，我也成为 Team Green 的一员了。" },
@@ -25,8 +49,10 @@ window.GAME_SCRIPT = {
     { type: "text", speaker: "你", text: "什……什么？亲自接见？！" },
     { type: "narration", text: "还没等你回过神，电梯门「叮」的一声打开。" },
     { type: "narration", text: "那件标志性的黑色皮夹克率先进入了你的视野。" },
-    { type: "text", speaker: "黄仁勋", text: "Hi，新来的工程师，是你吧？" },
-    { type: "text", speaker: "黄仁勋", text: "我是 Jensen。不用紧张，叫我老黄就好。" },
+    // 老黄登场：站中间，默认微笑表情（图片缺失时自动显示占位轮廓）
+    { type: "char", id: "jensen", expression: "smile", slot: "center", placeholder: true },
+    { type: "text", speaker: "黄仁勋", expression: "smile", text: "Hi，新来的工程师，是你吧？" },
+    { type: "text", speaker: "黄仁勋", expression: "laugh", text: "我是 Jensen。不用紧张，叫我老黄就好。" },
     { type: "text", speaker: "你", text: "（天啊，是真人！比 keynote 里还要有气场……）" },
     { type: "choice", choices: [
       { text: "「黄总好！久仰大名！」", affection: 3, reason: "礼貌加分" },
@@ -34,8 +60,8 @@ window.GAME_SCRIPT = {
       { text: "「我是您的粉丝！签个名可以吗？」", affection: 1, reason: "有点社死" },
     ]},
     { type: "text", speaker: "黄仁勋", text: "哈哈，放轻松。" },
-    { type: "text", speaker: "黄仁勋", text: "我一直相信一件事：这个时代最稀缺的，不是算力，而是——" },
-    { type: "text", speaker: "黄仁勋", text: "愿意和我一起，把不可能变成可能的人。" },
+    { type: "text", speaker: "黄仁勋", expression: "serious", text: "我一直相信一件事：这个时代最稀缺的，不是算力，而是——" },
+    { type: "text", speaker: "黄仁勋", expression: "loving", text: "愿意和我一起，把不可能变成可能的人。" },
     { type: "narration", text: "他的眼神坚定得近乎温柔，你的心跳漏了一拍。" },
     { type: "text", speaker: "黄仁勋", text: "走，我带你去看看你的工位。今晚有空吗？有个项目想让你参与。" },
     { type: "choice", choices: [

@@ -82,9 +82,23 @@ my_scene: [
 ]
 ```
 
-支持的 `type`：`scene` · `text` · `narration` · `choice` · `affection` · `flag` · `goto` · `ending`
+支持的 `type`：`scene` · `char` · `text` · `narration` · `choice` · `affection` · `flag` · `goto` · `ending`
 
-内置可用背景：`scene-office-night` · `scene-lobby` · `scene-gtc` · `scene-cafe` · `scene-rooftop` · `scene-confession`
+内置可用 CSS 背景：`scene-office-night` · `scene-lobby` · `scene-gtc` · `scene-cafe` · `scene-rooftop` · `scene-confession`
+
+## 图片素材（立绘 / 背景）
+
+引擎支持表情与姿势切换，但**所有图片都是可选的** —— 缺失时自动回退到 CSS 占位。
+
+素材放进 `assets/` 目录即可被自动加载，详细规格（格式、分辨率、表情清单、AI 出图 prompt）见 [`assets/README.md`](./assets/README.md)。
+
+最小上手示例：
+
+```js
+{ type: "char", id: "jensen", expression: "smile", slot: "center", placeholder: true }
+{ type: "text", speaker: "黄仁勋", expression: "laugh", text: "哈哈哈，说得好！" }
+{ type: "scene", bgImage: "office_night.jpg", mood: "romantic" }  // 用图片背景
+```
 
 ## 致敬
 
