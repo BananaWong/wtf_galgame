@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>与黄总的未来 · My Future with Jensen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="title-screen" class="screen active">
+    <div class="title-bg"></div>
+    <div class="title-content">
+      <h1 class="title-main">与黄总的未来</h1>
+      <p class="title-sub">My Future with Jensen —— 一场发生在 NVIDIA 顶层的恋爱</p>
+      <div class="title-menu">
+        <button class="title-btn" data-action="new-game">▶ 开始游戏</button>
+        <button class="title-btn" data-action="continue">➤ 继续游戏</button>
+        <button class="title-btn" data-action="gallery">❀ CG 回廊</button>
+        <button class="title-btn" data-action="about">✦ 关于</button>
+      </div>
+      <p class="title-foot">v1.0 · Galgame Demo · 仅供娱乐</p>
+    </div>
+  </div>
+
+  <div id="game-screen" class="screen">
+    <!-- Background scene (CSS scene) -->
+    <div id="scene-bg" class="scene-bg scene-office-night"></div>
+    <div id="character-sprite" class="character-sprite"></div>
+    <div class="scene-vignette"></div>
+
+    <!-- Top-left affection meter -->
+    <div class="hud hud-top-left">
+      <div class="hud-char-name" id="affection-name">黄仁勋</div>
+      <div class="affection">
+        <span class="affection-label">好感度</span>
+        <div class="heart-row" id="heart-row"></div>
+      </div>
+      <div class="affection-num" id="affection-num">0/100</div>
+    </div>
+
+    <!-- Top-right info panel -->
+    <div class="hud hud-top-right">
+      <div class="info-row"><span class="info-ico">📍</span><span class="info-label">地点：</span><span id="info-place">——</span></div>
+      <div class="info-row"><span class="info-ico">🕒</span><span class="info-label">时间：</span><span id="info-time">——</span></div>
+      <div class="info-row"><span class="info-ico">🌤</span><span class="info-label">天气：</span><span id="info-weather">——</span></div>
+    </div>
+
+    <!-- Choices panel -->
+    <div id="choices" class="choices"></div>
+
+    <!-- Dialog box -->
+    <div id="dialog-box" class="dialog-box">
+      <div class="dialog-nameplate">
+        <span class="dialog-sparkle">✦</span>
+        <span id="dialog-name">黄仁勋</span>
+      </div>
+      <div class="dialog-body">
+        <p id="dialog-text"></p>
+        <span id="dialog-indicator" class="dialog-indicator">▼</span>
+      </div>
+    </div>
+
+    <!-- Bottom toolbar -->
+    <div class="toolbar">
+      <button class="tool-btn" data-tool="back">⏮ 回退</button>
+      <button class="tool-btn" data-tool="skip">⏩ 快进</button>
+      <button class="tool-btn" data-tool="auto">▶ 自动</button>
+      <button class="tool-btn" data-tool="menu">≡ 菜单</button>
+      <button class="tool-btn" data-tool="save">💾 存档</button>
+      <button class="tool-btn" data-tool="load">📂 读取</button>
+      <button class="tool-btn" data-tool="settings">⚙ 设置</button>
+    </div>
+  </div>
+
+  <!-- Modal: Menu / Save / Load / Settings / About -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <h2 id="modal-title">菜单</h2>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Ending screen -->
+  <div id="ending-screen" class="screen">
+    <div class="ending-content">
+      <h1 id="ending-title">Ending</h1>
+      <p id="ending-text"></p>
+      <p id="ending-note" class="ending-note"></p>
+      <button class="title-btn" id="ending-back">回到标题</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
