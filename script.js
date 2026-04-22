@@ -85,6 +85,7 @@
 
   // ---- HUD 更新 --------------------------------------------------
   function setScene(cfg) {
+    const bgChanged = cfg.bg && cfg.bg !== state.bg;
     if (cfg.bg) {
       state.bg = cfg.bg;
       el.sceneBg.className = "scene-bg " + cfg.bg;
@@ -93,6 +94,13 @@
     if (cfg.time !== undefined)  { state.time  = cfg.time;  el.time.textContent  = cfg.time  || "——"; }
     if (cfg.weather !== undefined){state.weather = cfg.weather; el.weather.textContent = cfg.weather || "——"; }
     if (cfg.charName !== undefined){state.charName = cfg.charName; el.affectionName.textContent = cfg.charName || "黄仁勋"; }
+    if (cfg.mood && window.Sound) {
+      state.mood = cfg.mood;
+      window.Sound.bgm.play(cfg.mood);
+    }
+    if (bgChanged && window.Sound) {
+      window.Sound.sfx.sceneTransition();
+    }
   }
 
   function changeAffection(delta, reason) {
@@ -100,6 +108,10 @@
     renderHearts();
     if (delta !== 0) {
       flashAffection(delta > 0 ? "up" : "down", delta);
+      if (window.Sound) {
+        if (delta > 0) window.Sound.sfx.affectionUp();
+        else window.Sound.sfx.affectionDown();
+      }
     }
   }
 
@@ -134,7 +146,12 @@
 
     function step() {
       if (!state.typing) return;
+      const ch = text[i];
       el.dialogText.textContent = text.slice(0, ++i);
+      // 打字声：只对非空白、非标点字符触发
+      if (!state.skip && window.Sound && ch && !/[\s，。、！？「」『』…～:：;；—·\.\,\!\?]/.test(ch)) {
+        window.Sound.sfx.type();
+      }
       if (i < text.length) {
         state.typingTimer = setTimeout(step, speed);
       } else {
@@ -289,6 +306,7 @@
     state.waitingChoice = false;
   }
   function chooseChoice(c) {
+    if (window.Sound) window.Sound.sfx.choose();
     clearChoices();
     if (typeof c.affection === "number") changeAffection(c.affection, c.reason);
     if (c.flag) state.flags[c.flag.key] = c.flag.value;
@@ -321,6 +339,7 @@
     localStorage.setItem(SAVE_PREFIX + i, JSON.stringify(payload));
     renderSaveLoadModal(true);
     toast(`已存档到存档位 ${i + 1}`);
+    if (window.Sound) window.Sound.sfx.save();
   }
   function loadSlot(i) {
     const raw = localStorage.getItem(SAVE_PREFIX + i);
@@ -385,6 +404,7 @@
 
   function renderSettingsModal() {
     el.modalTitle.textContent = "设置";
+    const snd = window.Sound ? window.Sound.getSettings() : { muted: false, sfxVolume: 0.55, bgmVolume: 0.18 };
     el.modalBody.innerHTML = `
       <div class="settings-row">
         <label>文字速度</label>
@@ -395,6 +415,20 @@
         <label>自动模式间隔</label>
         <input type="range" min="400" max="4000" step="100" value="${settings.autoWait}" id="set-wait" />
         <span id="wait-val">${settings.autoWait}ms</span>
+      </div>
+      <div class="settings-row">
+        <label>音效音量 SFX</label>
+        <input type="range" min="0" max="100" value="${Math.round(snd.sfxVolume * 100)}" id="set-sfx" />
+        <span id="sfx-val">${Math.round(snd.sfxVolume * 100)}%</span>
+      </div>
+      <div class="settings-row">
+        <label>背景音乐 BGM</label>
+        <input type="range" min="0" max="100" value="${Math.round(snd.bgmVolume * 100)}" id="set-bgm" />
+        <span id="bgm-val">${Math.round(snd.bgmVolume * 100)}%</span>
+      </div>
+      <div class="settings-row">
+        <label>静音</label>
+        <button class="tool-btn ${snd.muted ? "active" : ""}" id="set-mute">${snd.muted ? "🔇 已静音" : "🔊 开启"}</button>
       </div>
       <div class="settings-row">
         <label>回到标题</label>
@@ -413,6 +447,26 @@
     $("#set-wait").addEventListener("input", (e) => {
       settings.autoWait = +e.target.value;
       $("#wait-val").textContent = settings.autoWait + "ms";
+      persistSettings();
+    });
+    $("#set-sfx").addEventListener("input", (e) => {
+      const v = +e.target.value / 100;
+      window.Sound && window.Sound.setSfxVolume(v);
+      $("#sfx-val").textContent = Math.round(v * 100) + "%";
+      persistSettings();
+    });
+    $("#set-bgm").addEventListener("input", (e) => {
+      const v = +e.target.value / 100;
+      window.Sound && window.Sound.setBgmVolume(v);
+      $("#bgm-val").textContent = Math.round(v * 100) + "%";
+      persistSettings();
+    });
+    $("#set-mute").addEventListener("click", (e) => {
+      if (!window.Sound) return;
+      const cur = window.Sound.getSettings().muted;
+      window.Sound.setMuted(!cur);
+      e.target.classList.toggle("active", !cur);
+      e.target.textContent = !cur ? "🔇 已静音" : "🔊 开启";
       persistSettings();
     });
     $("#go-title").addEventListener("click", () => { closeModal(); goTitle(); });
@@ -490,12 +544,18 @@
   }
 
   function persistSettings() {
-    localStorage.setItem("wtf_galgame_settings", JSON.stringify(settings));
+    const payload = { ...settings };
+    if (window.Sound) payload.sound = window.Sound.getSettings();
+    localStorage.setItem("wtf_galgame_settings", JSON.stringify(payload));
   }
   function loadPersisted() {
     try {
       const s = JSON.parse(localStorage.getItem("wtf_galgame_settings") || "null");
-      if (s) Object.assign(settings, s);
+      if (s) {
+        const { sound, ...rest } = s;
+        Object.assign(settings, rest);
+        if (sound && window.Sound) window.Sound.loadSettings(sound);
+      }
     } catch {}
   }
 
@@ -561,13 +621,37 @@
     el.endingText.textContent = line.text || "";
     el.endingNote.textContent = line.note || `最终好感度：${state.affection}/100`;
     switchScreen("ending");
+    if (window.Sound) {
+      const kind = line.endingKind || (line.title && /TRUE|SECRET/i.test(line.title) ? "true"
+                                       : line.title && /BAD/i.test(line.title) ? "bad"
+                                       : "good");
+      window.Sound.bgm.play("ending");
+      if (kind === "true") window.Sound.sfx.endingTrue();
+      else if (kind === "bad") window.Sound.sfx.endingBad();
+      else window.Sound.sfx.endingGood();
+    }
   }
 
   // ---- 事件绑定 --------------------------------------------------
   function bind() {
+    // 首次用户交互时解锁 AudioContext 并启动标题 BGM
+    const unlock = () => {
+      if (window.Sound) {
+        window.Sound.ensureCtx();
+        window.Sound.resume();
+        if (!state.bgmStarted) {
+          state.bgmStarted = true;
+          window.Sound.bgm.play("calm");
+        }
+      }
+    };
+    document.addEventListener("click", unlock, { once: false, capture: true });
+    document.addEventListener("keydown", unlock, { once: false, capture: true });
+
     // Title menu
     document.querySelectorAll(".title-btn[data-action]").forEach(b => {
       b.addEventListener("click", () => {
+        if (window.Sound) window.Sound.sfx.click();
         const a = b.dataset.action;
         if (a === "new-game") startGame("prologue");
         else if (a === "continue") continueGame();
@@ -606,6 +690,7 @@
     document.querySelectorAll(".tool-btn[data-tool]").forEach(b => {
       b.addEventListener("click", (e) => {
         e.stopPropagation();
+        if (window.Sound) window.Sound.sfx.click();
         const t = b.dataset.tool;
         if (t === "back") goBack();
         else if (t === "skip") {
