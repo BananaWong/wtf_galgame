@@ -423,6 +423,26 @@
         render();
         break;
       }
+      case "cond": {
+        // 条件跳转：line.cases 是一个数组，第一个 test(state) 为 true 的 case 执行 goto
+        // 最后一个可省略 test 作为 default
+        // 例：
+        //   { type: "cond", cases: [
+        //     { test: s => s.affection < 25, target: "ending_bad" },
+        //     { test: s => s.flags.secret && s.affection >= 85, target: "ending_secret" },
+        //     { target: "ending_good" }
+        //   ]}
+        const cases = line.cases || [];
+        const picked = cases.find(c => !c.test || (typeof c.test === "function" && c.test(state)));
+        if (picked && picked.target) {
+          state.scriptId = picked.target;
+          state.index = 0;
+        } else {
+          state.index++;
+        }
+        render();
+        break;
+      }
       case "ending": {
         showEnding(line);
         break;
