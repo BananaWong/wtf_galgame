@@ -839,6 +839,105 @@ chapter4_gtc_debug: [
   { type:"narration", text:"（早餐结束后……）" },
   { type:"narration", text:"天亮前，你们在一家小小的早餐店里吃完了一整套烧饼油条。\n他给你讲了 1993 年的台湾，讲了他父亲是怎么看待他「不务正业」创业的。\n你第一次听到他讲家人——那种讲法，是只有对信任的人，才会有的讲法。" },
   { type:"flag", key:"breakfast_together", value:true },
+  { type:"goto", target:"interlude_router" },
+],
+
+/* ================================================================
+   过场：去他家救一块旧 SCSI 硬盘
+   ================================================================ */
+interlude_router: [
+  { type:"scene", place:"主角家 · 客厅", time:"周日 上午 09:54", weather:"晴",
+    bg:"scene-cafe", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"GTC 之后第二个周末。\n你正在赖床，手机响了——是个陌生号码。" },
+  { type:"text", speaker:"???", text:"……是我。" },
+  { type:"text", speaker:"你", text:"……（一秒识别出声音）老黄？！" },
+  { type:"text", speaker:"黄仁勋", text:"嘘——别那么大声。\n……你今天有事吗？" },
+  { type:"text", speaker:"你", text:"……没有。" },
+  { type:"text", speaker:"黄仁勋", text:"……我家里有一块 1995 年的 SCSI 硬盘，刚才尝试备份的时候 controller 死了。\n里面有一些……我比较在意的东西。" },
+  { type:"text", speaker:"你", text:"……您让我去您家？" },
+  { type:"text", speaker:"黄仁勋", text:"……如果你不介意。\n（顿了顿）……我没找别人。" },
+
+  { type:"choice", choices:[
+    { text:"「半小时到。」",                   affection:8 },
+    { text:"「等我五分钟，叫车。」",           affection:6 },
+    { text:"「我就在你家小区附近。」（撒谎）", affection:11, flag:{key:"router_lie",value:true} },
+  ]},
+
+  /* —— 老黄家 · 半山的小别墅 —— */
+  { type:"scene", place:"硅谷半山 · 黄仁勋私宅", time:"上午 10:38", weather:"晴",
+    bg:"scene-rooftop", mood:"calm" },
+  { type:"narration", text:"半山的一栋小别墅。\n外观很普通，连邻居都不知道这里住的是谁。" },
+  { type:"narration", text:"门口没有保镖，只有一台旧的智能门铃。\n你按下，门开了。" },
+
+  { type:"char", id:"jensen", expression:"shy", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（穿着家居服站在门口）\n……进来。" },
+  { type:"narration", text:"你愣住了。\n你这辈子第一次，看见黄仁勋穿着不是皮夹克的衣服——\n灰色的长袖卫衣，下面是宽松的运动裤。" },
+  { type:"narration", text:"……他甚至光着脚。" },
+  { type:"flag", key:"saw_home_clothes", value:true },
+
+  { type:"text", speaker:"你", text:"……黄总。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"……今天叫我 Jensen 就好。\n这里不是公司。" },
+
+  { type:"narration", text:"客厅不大，整面墙都是书柜。\n上面一半是技术书，下面一半是各种杂志、漫画、甚至还有一格放着乐高。" },
+  { type:"narration", text:"墙上挂着一张很老的合影——\n黄仁勋，年轻的他，和几位早期员工。所有人手里举着第一代 RIVA。\n旁边还挂着一些他孩子小时候的画——已经发黄。" },
+  { type:"narration", text:"你忽然意识到——\n你是在他「人」的那一面，而不是「CEO」的那一面。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……硬盘在我书房。" },
+
+  /* —— 书房 —— */
+  { type:"scene", place:"黄仁勋私宅 · 书房", time:"上午 10:50", weather:"晴",
+    bg:"scene-cafe", mood:"calm" },
+
+  { type:"narration", text:"书房比客厅小，但更乱。\n一张大书桌上堆满了纸——是各种论文打印件，每一份都做了批注。" },
+  { type:"narration", text:"角落里堆着两台老式塔式机箱。\n他指着其中一台——" },
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"——这台是 1996 年我自己装的工作站。\n里面那块 SCSI 硬盘，挂的是当年 NV1 的所有调试日志。\n……还有一些我自己写的 demo 代码。" },
+  { type:"text", speaker:"你", text:"……（蹲下来）\n这个 controller 我看一下。" },
+
+  { type:"narration", text:"你打开机箱。一阵灰尘扑面。\n你伸手拨开线缆的时候，他递过来一支手电筒。\n指尖碰到指尖。\n你们都没说话，但都没缩回手。" },
+
+  { type:"text", speaker:"你", text:"……（轻咳）控制器电容鼓了。\n大概率换一颗就好。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……我书桌右边第二个抽屉，有备件。" },
+  { type:"text", speaker:"你", text:"——您家里居然备件齐全。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（小声）老人留点东西很正常的。" },
+
+  { type:"narration", text:"你换了电容、重新上电、跑了 fsck。\n硬盘嗡嗡转起来，IDE 灯一闪一闪。" },
+  { type:"narration", text:"——救活了。" },
+  { type:"flag", key:"saved_disk", value:true },
+
+  { type:"text", speaker:"黄仁勋", expression:"loving",
+    text:"……谢谢你。\n（顿了顿）这块硬盘里，有我太太当年帮我整理的项目目录。\n我一直没敢动它，怕它哪天就读不出来了。" },
+
+  { type:"narration", text:"——他第一次主动提到 Lori。\n你看了他一眼——他正盯着屏幕上那些早已斑驳的目录名，眼神很温柔，也很安静。" },
+  { type:"narration", text:"那种温柔不是给你的，是给一段过去的。\n你忽然觉得——这些过去，是他能成为他的一部分。\n你没有嫉妒，反而有一种……被信任的感觉。" },
+
+  { type:"choice", choices:[
+    { text:"「她一定是个很好的人。」",                     affection:11, flag:{key:"respect_past",value:true} },
+    { text:"「您让我看到这些，我很荣幸。」",               affection:9 },
+    { text:"「（什么也不说，只是轻轻拍了拍他肩膀）」",   affection:10 },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……（轻声）她是。\n……谢谢你这么说。" },
+
+  { type:"narration", text:"中午他做了一份简单的炒饭。\n你在他厨房里发现一个细节——他冰箱门上贴着一张便利贴，是他孩子用蜡笔写的：\n「Dad, 别又只吃泡面。」" },
+  { type:"narration", text:"你没说出来，但你笑了。" },
+
+  { type:"narration", text:"下午你离开他家的时候，他站在门口，挥了一下手。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……今天很谢谢你。" },
+  { type:"text", speaker:"你", text:"……不客气。我会保密的，关于您穿运动裤的事。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"……拜托保密。\n（笑着关门）" },
+
+  { type:"narration", text:"你走出小区，回头看那栋朴素的小别墅。\n阳光正好。\n你忽然明白了一件事——\n你不只是在了解一个 CEO，你在了解一个完整的人。\n包括他的过去，他的孩子的字迹，他冰箱门上贴着的小纸条。" },
+  { type:"narration", text:"——而他，也愿意把这些给你看了。" },
   { type:"goto", target:"interlude_colette" },
 ],
 
