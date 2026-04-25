@@ -1700,13 +1700,23 @@ chapter8_confession: [
    ================================================================ */
 ending_gate: [
   { type:"cond", cases:[
+    /* —— BAD：好感太低 —— */
     { test: s => s.affection < 25,
       target: "ending_bad" },
+
+    /* —— SECRET：极高好感 + 全程关键 flag —— */
+    /* 需要：散热片梗 + 承诺 + 拒绝 Apex + 东京夜 + 救 demo + 任意一个深度信任 flag */
     { test: s => s.affection >= 85
                 && s.flags.cooler && s.flags.commit
                 && s.flags.loyalty && s.flags.tokyo_night
-                && s.flags.demo_saved,
+                && s.flags.demo_saved
+                && (s.flags.first_office_key
+                    || s.flags.saved_disk
+                    || s.flags.rainy_711
+                    || s.flags.respect_past),
       target: "ending_secret" },
+
+    /* —— TRUE：牵手选项 + 高好感 —— */
     { test: s => s.flags.choice_hand && s.affection >= 60,
       target: "ending_true" },
     { test: s => s.flags.choice_confess && s.affection >= 40,
