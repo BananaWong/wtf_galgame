@@ -304,8 +304,8 @@ chapter2_cafe: [
     bg:"scene-cafe", mood:"romantic", clearChars:true },
   { type:"char", id:"jensen", expression:"smile", pose:"leaning", slot:"center", placeholder:true },
 
-  { type:"narration", text:"入职两周后，他发来一条消息。\n只有一行字：下午有空吗？带你去个地方。" },
-  { type:"narration", text:"那家咖啡馆没有招牌，藏在停车场后面的小巷里。\n你推开门，他已经坐在角落，面前放着一杯黑咖啡，低头看着什么。" },
+  { type:"narration", text:"入职两周后，他发来一条消息。\n一行字：下午有空吗？带你去个地方。" },
+  { type:"narration", text:"店没有招牌，藏在停车场后面的小巷子里。\n你推开门——他已经坐在最里面那张角落桌，一杯黑咖啡，正在看一份打印的论文。" },
   { type:"text", speaker:"黄仁勋", expression:"smile", text:"来了。坐。" },
   { type:"text", speaker:"你", text:"（环顾四周）这里……是您常来的地方？" },
   { type:"text", speaker:"黄仁勋", expression:"laugh",
@@ -314,15 +314,15 @@ chapter2_cafe: [
   { type:"text", speaker:"黄仁勋", expression:"smile", text:"这是夸我还是在说我有问题？" },
   { type:"text", speaker:"你", text:"夸您。" },
 
-  { type:"narration", text:"他轻轻笑了。窗外有人骑单车经过，阳光在咖啡杯上折射出小小的彩虹。" },
+  { type:"narration", text:"他轻轻笑了一下。\n窗外有人骑单车经过。" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking", pose:"hand_chin",
     text:"我想问你一件和工作无关的事。" },
   { type:"text", speaker:"你", text:"……说吧。" },
   { type:"text", speaker:"黄仁勋", expression:"thinking",
-    text:"你是怎么走上这条路的？\n不是履历上那个版本，是真实的版本。" },
+    text:"你是怎么走上这条路的？\n不是 CV 上那一版——真实的那一版。" },
 
-  { type:"narration", text:"这个问题像一根针，准确地戳到了你从来没在面试里说过的那部分。" },
+  { type:"narration", text:"……这个问题，你从来没在任何面试里答过。" },
 
   { type:"choice", choices:[
     { text:"「我小时候第一次用父亲的电脑，世界突然变大了。」", affection:8  },
@@ -334,12 +334,14 @@ chapter2_cafe: [
     text:"不俗气。\n每个在这个行业里真正做成事的人，都在某个深夜问过自己同一个问题：\n这到底值不值得。" },
   { type:"text", speaker:"你", text:"您也问过自己吗？" },
   { type:"text", speaker:"黄仁勋", expression:"sad",
-    text:"问过。1999 年的时候，英伟达股价崩了，我老婆在哭，我父母不理解我。\n我在 Lori 面前说了句：对不起，我可能真的错了。" },
+    text:"问过。\n1999 年那会儿，公司股价崩了。\n我老婆在哭，我父母不理解我。\n我跟 Lori 说：对不起，我可能真的错了。" },
   { type:"text", speaker:"你", text:"……然后呢？" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
-    text:"然后她说：那就再试一次，错了我陪你再道歉。\n你知道一个人说这话的分量吗？" },
+    text:"然后她说——\n那就再试一次。错了我陪你再道一次歉。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……你知道一个人说这种话的分量吗。" },
 
-  { type:"narration", text:"你沉默了一会儿。\n他提起 Lori 的时候，眼睛里有很深的东西，像一片你看不到底的湖。" },
+  { type:"narration", text:"你没出声。\n他讲到 Lori 的时候，眼神里有一种你不敢插话的东西。" },
 
   { type:"choice", choices:[
     { text:"「……她很了不起。」",                 affection:6 },
@@ -348,9 +350,10 @@ chapter2_cafe: [
   ]},
 
   { type:"text", speaker:"黄仁勋", expression:"loving",
-    text:"（看着你，安静了几秒）\n……你这个人，说话的方式，有时候会让我觉得……" },
-  { type:"text", speaker:"黄仁勋", expression:"shy", text:"……算了。喝咖啡，我帮你点了拿铁。" },
-  { type:"narration", text:"他低头喝咖啡，耳根似乎有那么一点点红。\n你盯着他，心里有什么东西悄悄松动了。" },
+    text:"……（看了你几秒）\n……你这个人，说话的方式，有时候挺要命的。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……算了。喝咖啡，我帮你点了拿铁。" },
+  { type:"narration", text:"他低头喝咖啡。\n耳根有那么一点点红。" },
 
   /* —— 中段：你提到怎么知道这家咖啡馆 —— */
   { type:"text", speaker:"你", text:"……您是怎么发现这家店的？" },
@@ -383,14 +386,15 @@ chapter2_cafe: [
 
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……（沉默几秒）\n……你不是「很多人」之一。" },
-  { type:"narration", text:"窗外的阳光忽然斜得正好，落在他放在桌上的手背上。\n你不动声色地把目光收回，端起拿铁喝了一口。\n——其实已经凉了，但你不想让自己说话的声音被发现在抖。" },
+  { type:"narration", text:"阳光斜下来，正好落在他搁在桌上的那只手背。" },
+  { type:"narration", text:"你把目光挪开，端起拿铁喝了一口——\n已经凉了。\n但你需要这一口，让自己说话不抖。" },
 
   /* —— 转入 GTC demo 委托 —— */
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"对了，GTC 快到了。今年的 keynote 我想加一个新环节。\n你愿意帮我准备一个 live demo 吗？" },
   { type:"text", speaker:"你", text:"（一惊）我……来了才三周——" },
   { type:"text", speaker:"黄仁勋", expression:"serious",
-    text:"我知道。我也才做了三年 CEO 就上了纳斯达克。\n时间不是问题，勇气才是。" },
+    text:"我知道。我也是做了三年 CEO 就上了纳斯达克。\n时间不是问题，敢不敢上才是。" },
 
   { type:"choice", choices:[
     { text:"「好，我接。」",                       affection:10 },
