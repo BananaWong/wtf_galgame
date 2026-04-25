@@ -845,8 +845,8 @@ chapter4_gtc_debug: [
   /* —— 早餐店场景扩展 —— */
   { type:"scene", place:"会场附近 · 24h 早餐店「永和阿嬷」", time:"清晨 06:18", weather:"破晓",
     bg:"scene-cafe", mood:"calm" },
-  { type:"narration", text:"巷口有一家小小的早餐店，玻璃门上贴着褪色的红色「永和」二字。\n空气里全是豆浆和油条的香味。" },
-  { type:"narration", text:"老板娘是个台湾阿嬷，看起来六十多岁。\n她抬头看了一眼，愣了两秒——" },
+  { type:"narration", text:"巷口一家小早餐店，玻璃门上贴着褪色的「永和」两个字。\n推门进去——豆浆和油条的味道扑过来。" },
+  { type:"narration", text:"老板娘是台湾阿嬷，六十多岁。\n她抬头看了一眼——愣了两秒。" },
 
   { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
   { type:"text", speaker:"老板娘", text:"……黄……总？" },
@@ -863,7 +863,7 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"黄仁勋", expression:"smile", text:"——给他的。" },
   { type:"text", speaker:"老板娘", text:"……谢谢黄总，谢谢黄总。" },
 
-  { type:"narration", text:"你们在角落坐下。\n外面天色慢慢从墨蓝变成淡橙。\n烧饼很烫，掰开的时候有热气冒出来。" },
+  { type:"narration", text:"你们在角落坐下。\n外面的天，从墨蓝慢慢变成淡橙。\n烧饼很烫，掰开冒着白气。" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
     text:"（咬了一口）……还是这个味。" },
@@ -893,12 +893,11 @@ chapter4_gtc_debug: [
     { text:"「（伸手轻轻拍了一下他的手背）」", affection:12, flag:{key:"breakfast_touch",value:true} },
   ]},
 
-  { type:"text", speaker:"黄仁勋", expression:"shy",
-    text:"……（很轻地点了点头）" },
-  { type:"narration", text:"窗外的天，慢慢全亮了。\n阿嬷又上了一笼小笼包，说是请客。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy", text:"……（轻轻点了点头）" },
+  { type:"narration", text:"窗外的天慢慢亮透了。\n阿嬷又端了一笼小笼包过来，说是请客。" },
   { type:"text", speaker:"老板娘", text:"黄总你太瘦了，多吃一点。" },
   { type:"text", speaker:"黄仁勋", expression:"laugh", text:"阿嬷，这十年大家都说我太瘦。" },
-  { type:"narration", text:"小笼包热腾腾的，桌子小到你和他的胳膊会偶尔碰到。\n你们都没移开。" },
+  { type:"narration", text:"小笼包热腾腾的。\n桌子很小，胳膊偶尔碰到——\n你们都没挪开。" },
 
   { type:"narration", text:"（早餐结束后……）" },
   { type:"narration", text:"天亮前，你们在一家小小的早餐店里吃完了一整套烧饼油条。\n他给你讲了 1993 年的台湾，讲了他父亲是怎么看待他「不务正业」创业的。\n你第一次听到他讲家人——那种讲法，是只有对信任的人，才会有的讲法。" },
