@@ -1047,6 +1047,59 @@ chapter6_tokyo: [
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……好。（停了一下）好久没有人请我了。" },
 
+  /* —— 东京白天 · 秋叶原 —— */
+  { type:"scene", place:"东京 · 秋叶原小巷", time:"下午 15:20", weather:"小雨转晴",
+    bg:"scene-cafe", mood:"romantic" },
+
+  { type:"narration", text:"峰会结束后还有半天空闲。\n他没有让司机来接，而是带着你走出酒店，转了三趟地铁。" },
+  { type:"narration", text:"——秋叶原。" },
+  { type:"text", speaker:"你", text:"……您带我来这里？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"这里是我心里的「圣地」。\n你之前不是问过我，1997 年来日本买的那个 PSP 在哪儿——我带你去看那家店。" },
+
+  { type:"narration", text:"巷子很窄，两边都是密密麻麻的电子配件店和模型店。\n二楼以上的招牌一个叠着一个，像一本立体的电子杂志。" },
+  { type:"narration", text:"他在一家很旧的小店门口停了下来。\n店招牌上的字已经掉了一半，玻璃门上贴着泛黄的「FAMICOM」海报。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"——就是这家。\n二十七年了，店还在。" },
+  { type:"text", speaker:"你", text:"老板还认得您吗？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"当年我太狼狈了，他大概早忘了。" },
+
+  { type:"narration", text:"店里只有一个老爷爷在柜台后面打瞌睡。\n货架上零件密密麻麻，从初代 GameBoy 主板到 90 年代的显卡都有。" },
+
+  { type:"text", speaker:"老板", text:"いらっしゃい——\n（看了一眼，又看了第二眼）……あれ？" },
+  { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……" },
+  { type:"text", speaker:"老板", text:"（用磕巴的英语）你……你是不是 1997 年，买过我们最后一台 PSP——还在飞机上拆开看的那个？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"……（愣住，然后大笑）\n是我。是我。" },
+  { type:"text", speaker:"老板", text:"那台机器，你拆完，写信寄回来给我说哪里设计得不好。\n我留了二十七年，等你来取——" },
+
+  { type:"narration", text:"老板从柜台底下拿出一个旧木盒。\n打开——\n里面是一台已经发黄的 PSP，旁边夹着一封信。" },
+
+  { type:"choice", choices:[
+    { text:"「……您还真写过信？」",                       affection:7 },
+    { text:"「（递纸巾）您可以哭一下没事的。」",         affection:11, flag:{key:"tokyo_tissue",value:true} },
+    { text:"「老板，谢谢您。」",                         affection:8 },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（接过盒子，手指微微发抖）\n谢谢。" },
+  { type:"narration", text:"他没有当场打开信封，只是把整个木盒小心地放进双肩包里。\n出门的时候，雨已经停了。\n秋日下午的阳光落在窄巷尽头，像一条狭长的金色河。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"loving",
+    text:"……我从来没跟人讲过这件事。" },
+  { type:"text", speaker:"你", text:"现在讲了。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……是啊。" },
+  { type:"narration", text:"他没有看你，但他下意识地，把双肩包的肩带往你这边换了一下。\n两个人并肩走，肩膀偶尔会撞到。" },
+  { type:"flag", key:"tokyo_psp", value:true },
+
+  { type:"narration", text:"傍晚时分，你们去了一家不起眼的家庭式拉面店吃饭。\n他点了酱油味噌，你点了豚骨。\n他偷偷把自己的卤蛋放到你碗里，被你抓包。" },
+  { type:"text", speaker:"你", text:"……您又来。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（默默把卤蛋切了一半，自己留一半）" },
+  { type:"text", speaker:"你", text:"（笑出声）" },
+
   { type:"scene", place:"东京 · 隐居酒屋「雨屋」", time:"深夜 22:10", weather:"雨",
     bg:"scene-rooftop", mood:"romantic" },
   { type:"narration", text:"酒屋很小，只有六张桌子，雨打在木格窗上，声音细碎而持续。\n你们坐在靠里的角落，各自点了一杯。" },
