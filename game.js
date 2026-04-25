@@ -133,6 +133,25 @@ chapter1: [
     text:"（亲手倒了一杯乌龙）这是台湾高山茶，我每次回来都会带一点。" },
   { type:"narration", text:"你接过茶杯，掌心感受到一阵温热。" },
 
+  /* —— 进入正题前的小铺垫 —— */
+  { type:"narration", text:"办公室里没有多余的家具。\n一张大书桌，一张沙发，一个旧式的台灯。\n靠墙立着一个玻璃柜，里面整整齐齐摆着一排芯片——每一颗下面都有标签。" },
+  { type:"text", speaker:"你", text:"（指着柜子）……这些是？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"我们每一代产品的第一颗。\n从 1995 年的 NV1 到去年的 H100。" },
+  { type:"text", speaker:"你", text:"……NV1 还在。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"NV1 是个失败品。\n但失败品也是历史的一部分。\n你不留着它，下一次就还会犯同样的错。" },
+
+  { type:"choice", choices:[
+    { text:"「这句话能写进我办公桌上吗？」",   affection:7  },
+    { text:"「您把失败品摆在最显眼的位置——这才是真正的勇气。」", affection:11, flag:{key:"observed_failure",value:true} },
+    { text:"「您每天看着 NV1 工作？」",         affection:6  },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"（轻声）每天。\n它提醒我——这家公司从来没有保险过。" },
+  { type:"narration", text:"他说这话的时候，目光从玻璃柜上慢慢移回到你身上。\n你忽然觉得，那一柜子芯片不是奖杯——更像是某种私人的供品。" },
+
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"我想问你一个问题。不是技术问题。" },
   { type:"text", speaker:"你", text:"请说。" },
@@ -159,12 +178,46 @@ chapter1: [
 
   { type:"narration", text:"他说这话的时候平静得出奇，像是在讲别人的故事。\n但你感觉到，那五个小时是真的很沉的五个小时。" },
 
+  /* —— 中段：谈论文 —— */
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"说回你。你今天入职，我真正想说的是：\n这里不是让你来证明自己的地方——是让你来改变世界的地方。\n有区别。" },
   { type:"text", speaker:"你", text:"……我明白。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"好。那我们谈正事。" },
+  { type:"narration", text:"他从抽屉里拿出一摞打印纸，啪的一声放在桌上。\n是你的论文。\n所有边角都被他用绿色荧光笔标过，写满了批注。" },
+  { type:"text", speaker:"你", text:"（傻眼）……这是？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"我打印了三份。一份给我自己，一份给研究院的 Bill，一份——" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"留给你今晚带回去看。\n你会发现你自己的某些假设，其实还可以再大胆一倍。" },
+  { type:"text", speaker:"你", text:"（接过来，发现某一页贴了一张便利贴：「这一段假设保守了。问 X。」）" },
+  { type:"text", speaker:"你", text:"……X 是我吗？" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（喝了一口茶）\n是的。" },
+
+  { type:"choice", choices:[
+    { text:"「您什么时候读完的？」",                 affection:7  },
+    { text:"「……这是我读过的最认真的批注。」",     affection:10, flag:{key:"paper_read",value:true} },
+    { text:"「我明天就把假设放大两倍重跑。」",     affection:11 },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"两倍可能太激进。\n（笑）但我喜欢这个态度。" },
+
   { type:"narration", text:"接下来三个小时，你们谈了架构、谈了 CUDA 的未来、谈了 AI 的边界。\n他思考的速度，比你想象的快得多。但他从来不抢答——他听。" },
+  { type:"narration", text:"中途你提到一个新出的开源框架。\n他「嗯」了一声，从旁边一个文件夹里翻出了那篇论文的预印本——\n上面也是密密麻麻的批注。" },
+  { type:"text", speaker:"你", text:"（心想：他比我读得还快……）" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"做这一行，看论文不是任务，是呼吸。\n你不读，下个月就跟不上了。" },
+  { type:"text", speaker:"你", text:"那您一晚上读多少？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"（认真想了想）……七到十篇。\n但我不细读，我做 abstract 级别的扫描。\n真正想读的，会反复读三四遍。" },
+  { type:"text", speaker:"你", text:"那您今天读我的——" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……四遍。" },
+  { type:"narration", text:"你低头喝茶，遮住自己越来越红的脸。" },
+
   { type:"narration", text:"凌晨一点，他才说：" },
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"你去休息吧。明天还要来上班。" },
