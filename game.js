@@ -743,8 +743,7 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"够，因为你现在不是一个人在修。" },
 
-  { type:"narration", text:"他脱了皮夹克，搭在椅背上，坐到了你旁边。" },
-  { type:"narration", text:"黄仁勋·NVIDIA CEO·皮夹克标志性人物……\n此时此刻，只是一个在你旁边打开 vim 的工程师。" },
+  { type:"narration", text:"他脱了皮夹克搭在椅背上，坐到你旁边。\n黄仁勋——CEO、keynote 王者、那件皮夹克的代言人——\n此刻就是个打开 vim 的工程师。" },
 
   { type:"choice", choices:[
     { text:"「……您还会 CUDA 编程？」",             affection:8  },
@@ -757,7 +756,7 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"你", text:"（汗）……我忘了。" },
   { type:"text", speaker:"黄仁勋", expression:"serious", text:"专注。说说你的思路。" },
 
-  { type:"narration", text:"你们就这样分工了：你负责 Python 层的逻辑隔离，他扑向底层 kernel。\n机房里只有风扇的嗡鸣和两个人敲键盘的声音。" },
+  { type:"narration", text:"分工——你抓 Python 层的逻辑隔离，他下到底层 kernel。\n机房里只剩风扇嗡鸣，和两套键盘的声音。" },
 
   /* —— debug 中段：Colette 送宵夜 + 耳机分享 —— */
   { type:"scene", place:"GTC 会场技术机房", time:"凌晨 03:42", weather:"晴",
@@ -796,9 +795,9 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"你", text:"……？" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"我 debug 卡的时候听这个。\n试试。" },
-  { type:"narration", text:"你戴上耳机——\n是一段非常老旧的 City Pop。\n大村憲司？山下達郎？你认不出，但旋律温柔得像有阳光透进来。" },
-  { type:"text", speaker:"你", text:"……（你们就这样一人一只耳机，并排坐着，盯着同一块屏幕）" },
-  { type:"narration", text:"耳机线很短。\n你们的肩膀离得很近。\n他每次输入一行代码，你都能感觉到那一阵微弱的震动。" },
+  { type:"narration", text:"你戴上一只——\n是很老的 City Pop。\n山下達郎？大村憲司？认不出来——\n但 70 年代日本的那种慢节奏，听得人心跳变软。" },
+  { type:"narration", text:"你们就这样一人一只耳机，并排盯着同一块屏幕。" },
+  { type:"narration", text:"耳机线很短。\n肩膀离得很近。\n他每敲一下回车，你都能感觉到那一下震动。" },
   { type:"flag", key:"shared_earphone", value:true },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
@@ -823,8 +822,8 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"那是我写的。\n（顿了顿）……所以我知道怎么修。" },
 
-  { type:"narration", text:"他修了十七分钟。你的管道在早上六点重新跑起来了，像什么都没发生过一样稳。" },
-  { type:"narration", text:"窗外，会场的服务人员开始摆放座椅。天还没亮，但东方已经有一点淡淡的橙。" },
+  { type:"narration", text:"他修了十七分钟。\n早上六点，你的管道重新跑了起来——干净、稳定，像昨晚什么都没发生过。" },
+  { type:"narration", text:"窗外，会场的服务人员开始摆椅子。\n天还没亮——东边一点淡橙色。" },
 
   { type:"text", speaker:"黄仁勋", expression:"tired",
     text:"（揉了揉眼睛）饿吗？" },
