@@ -415,9 +415,9 @@ interlude_pantry: [
   { type:"scene", place:"NVIDIA 总部 · 28 楼茶水间", time:"上午 10:42", weather:"晴",
     bg:"scene-lobby", mood:"calm", clearChars:true },
 
-  { type:"narration", text:"咖啡馆那次对话之后过了五天。\n你已经把 demo 的核心架构搭起来了，今天来茶水间倒咖啡，准备继续干。" },
-  { type:"narration", text:"咖啡机正在运转，你正盯着滴壶发呆——" },
-  { type:"text", speaker:"???", text:"那台咖啡机第三档磨豆，比第二档好喝。" },
+  { type:"narration", text:"咖啡馆那次之后过了五天。\ndemo 主架构搭起来了。\n你来茶水间倒咖啡，打算回去继续。" },
+  { type:"narration", text:"咖啡机咕嘟咕嘟在响。你盯着滴壶发呆。" },
+  { type:"text", speaker:"???", text:"——第三档磨豆，比第二档好喝。" },
   { type:"narration", text:"你回头。" },
   { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
   { type:"text", speaker:"黄仁勋", expression:"smile",
@@ -429,7 +429,7 @@ interlude_pantry: [
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"（默默把杯子转了个角度）\n……女儿送的。十年前。" },
 
-  { type:"narration", text:"你忍着笑，按下咖啡机第三档。豆子开始发出更粗粝的研磨声。" },
+  { type:"narration", text:"你忍着笑，按下第三档。" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking", pose:"hand_chin",
     text:"demo 进度怎么样？" },
@@ -466,9 +466,9 @@ interlude_pantry: [
   ]},
 
   { type:"text", speaker:"黄仁勋", expression:"loving", text:"……是啊。" },
-  { type:"narration", text:"他没有继续往下说。\n但那一刻你忽然意识到——\n茶水间里的咖啡机声，再也不只是咖啡机声了。" },
+  { type:"narration", text:"他没接着往下说。\n但你听见自己心跳，比咖啡机还响。" },
 
-  { type:"narration", text:"中午回到工位，Colette 路过你的座位，停了一下。" },
+  { type:"narration", text:"中午回到工位。\nColette 路过，在你旁边停了一下。" },
   { type:"char", id:"colette", expression:"smile", slot:"right", placeholder:true },
   { type:"text", speaker:"Colette", expression:"smile",
     text:"（压低声音）他今天笑得不一样。\n……你也是。" },
@@ -476,7 +476,7 @@ interlude_pantry: [
   { type:"text", speaker:"Colette", expression:"warm",
     text:"（眨眼）我什么都没说。" },
   { type:"char", id:"colette", hide:true, slot:"right" },
-  { type:"narration", text:"她笑着走开了，留下你一个人对着电脑屏幕，发热的脸怎么都退不下去。" },
+  { type:"narration", text:"她笑着走开。\n你对着屏幕坐了好一会儿——脸上的热没退下去。" },
   { type:"goto", target:"chapter3_boardroom" },
 ],
 
@@ -487,17 +487,17 @@ chapter3_boardroom: [
   { type:"scene", place:"NVIDIA 总部 · 32 楼会议室", time:"上午 10:15", weather:"阴",
     bg:"scene-lobby", mood:"tense", clearChars:true },
 
-  { type:"narration", text:"GTC 前两周，一场风暴悄悄在你们头顶聚集。" },
-  { type:"narration", text:"竞争对手 Apex AI 宣布融资 200 亿，矛头直指 NVIDIA 的数据中心业务。\n董事会要求在本周内给出「战略回应方案」。" },
-  { type:"narration", text:"你站在会议室外，透过玻璃看见里面的人们——包括一张你不认识的脸。" },
+  { type:"narration", text:"GTC 前两周。\n一阵风暴在你们头顶悄悄起来了。" },
+  { type:"narration", text:"竞争对手 Apex AI 宣布融了 200 亿，公开点名要打 NVIDIA 的数据中心。\n董事会限本周内给出战略回应。" },
+  { type:"narration", text:"你站在会议室外，隔着玻璃往里看——\n几个熟面孔，还有一张你没见过的脸。" },
 
   { type:"char", id:"colette", expression:"serious", slot:"right", placeholder:true },
   { type:"text", speaker:"Colette", expression:"serious",
     text:"（从会议室走出来，差点撞上你）\n哦——你是新来的工程师？我是 Colette，CFO。" },
   { type:"text", speaker:"你", text:"你好，我是——" },
   { type:"text", speaker:"Colette", expression:"smile",
-    text:"我知道你是谁。Jensen 跟我提过你。（顿了顿）他很少提人。" },
-  { type:"narration", text:"她说这话的时候眼神有一点难以捕捉的意味，让你一时没反应过来。" },
+    text:"我知道你是谁。Jensen 跟我提过你。\n（顿了顿）他很少提人。" },
+  { type:"narration", text:"她说这话的时候，眼神里有点意味。\n但你没顾得上想——下一秒她已经把话题转了。" },
 
   { type:"text", speaker:"Colette", expression:"serious",
     text:"今天的会可能会很难看。董事会有人想把数据中心部门拆分上市，快钱。\nJensen 不同意，但他需要数据支撑，不只是愿景。" },
@@ -514,8 +514,8 @@ chapter3_boardroom: [
 
   { type:"text", speaker:"Colette", expression:"surprised", text:"……你居然叫我名字。（轻笑）行。我给你腾一间小会议室。" },
 
-  { type:"narration", text:"接下来一个半小时，你一边整理数据一边回想所有的技术细节。\n窗外，乌云越压越低。" },
-  { type:"narration", text:"就在会议即将开始前五分钟，门开了。" },
+  { type:"narration", text:"接下来一个半小时，你一边整理数据一边过技术细节。\n窗外的云越压越低。" },
+  { type:"narration", text:"会议开始前五分钟，门开了。" },
 
   { type:"char", id:"jensen", expression:"serious", pose:"stand", slot:"left", placeholder:true },
   { type:"text", speaker:"黄仁勋", expression:"serious", text:"准备好了吗？" },
@@ -525,10 +525,10 @@ chapter3_boardroom: [
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"你的数据，你来讲。\n董事会的人不只听数字，他们听讲数字的人。" },
 
-  { type:"narration", text:"会议室里，八张脸向你看过来。你握紧了 U 盘，走上去。" },
-  { type:"narration", text:"你讲了二十二分钟。数据、模型、增长曲线。\n中途有人打断你，你接住了，没慌。" },
-  { type:"narration", text:"Jensen 坐在角落，全程没说一句话，但他的眼神一直跟着你。" },
-  { type:"narration", text:"会议结束，主张拆分的声音明显弱了下去。" },
+  { type:"narration", text:"会议室里，八张脸朝你看过来。\n你攥紧 U 盘，走了上去。" },
+  { type:"narration", text:"你讲了二十二分钟。\n数据。模型。增长曲线。\n中途有人打断你两次——你接住了，没慌。" },
+  { type:"narration", text:"Jensen 坐在角落，没插话。\n但他的眼睛一直没离开你。" },
+  { type:"narration", text:"会议结束。\n主张拆分的声音，明显弱了下去。" },
 
   { type:"char", id:"colette", expression:"warm", slot:"right", placeholder:true },
   { type:"text", speaker:"Colette", expression:"warm", text:"（走出来，低声）……干得漂亮。" },
@@ -552,7 +552,7 @@ chapter3_boardroom: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"临时发挥，讲了二十分钟没在稿子里的东西。\n那场反而是反响最好的一次。" },
 
-  { type:"narration", text:"走廊里，你们肩并肩走向电梯。\n今天的阴天，突然没那么阴了。" },
+  { type:"narration", text:"走廊里，你们肩并肩走向电梯。\n窗外的云不知什么时候散了一点。" },
 
   { type:"narration", text:"（三天后……）" },
   { type:"scene", place:"办公室走廊", time:"傍晚 18:40", weather:"晴",
@@ -582,7 +582,7 @@ chapter3_boardroom: [
   { type:"text", speaker:"Marcus", expression:"serious",
     text:"……好吧。（转身）那我只能说——希望 NVIDIA 值得。" },
 
-  { type:"narration", text:"他走了。你在走廊里站了一会儿，让心跳慢慢平稳。\n值不值得，你其实早就知道答案。" },
+  { type:"narration", text:"他走了。\n你在走廊里站了一会儿，等心跳平下来。\n——值不值得，你其实早就知道答案。" },
 
   /* —— Marcus 走后 + Jensen 知情 —— */
   { type:"narration", text:"——但你没想到，这件事会这么快传到他耳朵里。" },
