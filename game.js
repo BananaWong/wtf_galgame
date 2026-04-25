@@ -845,8 +845,51 @@ interlude_colette: [
    第五章：GTC 发布夜
    ================================================================ */
 chapter5_gtc_keynote: [
-  { type:"scene", place:"GTC 主会场 · 后台", time:"傍晚 19:55", weather:"晴",
-    bg:"scene-gtc", mood:"romantic", clearChars:true },
+  /* —— 后台开场 —— */
+  { type:"scene", place:"GTC 主会场 · 后台监控室", time:"下午 17:30", weather:"晴",
+    bg:"scene-gtc", mood:"tense", clearChars:true },
+
+  { type:"narration", text:"GTC 当天，下午五点半。\n主会场后台的监控室。一整面墙上显示着所有摄像头的实时画面：\n主舞台、观众席、控制台、走廊、休息室。" },
+  { type:"narration", text:"你被分配到 demo 控制席，戴着耳麦，盯着属于你那份的屏幕。\n手心一直在出汗。" },
+  { type:"text", speaker:"舞台导演", text:"——主持人 OK，灯光 OK，观众入场完毕。\n黄总后台五分钟。" },
+  { type:"narration", text:"五分钟后——他来了。\n身上还是那件皮夹克，刚刚似乎被熨烫过。" },
+
+  { type:"char", id:"jensen", expression:"thinking", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"（看了你一眼）……你紧张吗？" },
+  { type:"text", speaker:"你", text:"……不紧张是假的。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"我紧张三十年了，没好过。\n（伸手在你肩膀上轻轻拍了一下）\n但我学到一件事——上台前别压紧张，借它的力。" },
+
+  { type:"choice", choices:[
+    { text:"「您拍的这一下，我能记一辈子。」",     affection:9 },
+    { text:"「……明白。借力。」",                 affection:6 },
+    { text:"「我不会让您失望的。」",             affection:11, flag:{key:"vow_keynote",value:true} },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"——好。我上台了。" },
+
+  /* —— 上台 —— */
+  { type:"scene", place:"GTC 主舞台", time:"下午 18:00", weather:"晴",
+    bg:"scene-gtc", mood:"romantic" },
+  { type:"narration", text:"灯光熄灭。\n主舞台后方的巨型 LED 慢慢亮起，是 NVIDIA 标志性的绿色。\n那一秒，整座会场的呼吸都停了。" },
+  { type:"narration", text:"——他走上台。" },
+  { type:"narration", text:"全场欢呼，像一场海啸。\n你戴着耳麦，从监控室的角度看他——\n他从来没有这么发亮过。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"proud",
+    text:"……Welcome to GTC.\n今天，我们要讨论的，是「下一个十年」。" },
+  { type:"narration", text:"他开始讲。\n讲到一半，他打了一个比喻——\n「当 AI 能看懂世界，我们终于不再是孤独的物种。」" },
+  { type:"narration", text:"那句话不在原稿里。\n你从耳麦那头听见后台导演的低声惊叹。" },
+
+  { type:"text", speaker:"舞台导演", text:"——demo 倒计时三十秒。准备就绪。" },
+  { type:"text", speaker:"你", text:"（手悬在 Enter 键上，深吸了一口气）" },
+  { type:"narration", text:"三、二、一——" },
+  { type:"narration", text:"你按下了那个键。" },
+  { type:"narration", text:"主屏上，那段你昨晚以为再也跑不起来的代码，开始流畅地展开。\n推理速度、token 输出、模型生成的画面——一切都精确，干净，漂亮。" },
+  { type:"narration", text:"全场掌声。" },
+  { type:"narration", text:"他在台上，向你的方向（监控室）微微点了一下头。" },
+  { type:"flag", key:"demo_pressed", value:true },
 
   { type:"narration", text:"一万两千人的会场。\n你站在后台，听着现场的欢呼声一浪高过一浪。" },
   { type:"narration", text:"你的 demo，在那块巨大的屏幕上跑得行云流水——像它从来没有在凌晨崩过一样。" },
