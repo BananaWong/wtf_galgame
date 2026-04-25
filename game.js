@@ -519,6 +519,49 @@ chapter3_boardroom: [
     text:"……好吧。（转身）那我只能说——希望 NVIDIA 值得。" },
 
   { type:"narration", text:"他走了。你在走廊里站了一会儿，让心跳慢慢平稳。\n值不值得，你其实早就知道答案。" },
+
+  /* —— Marcus 走后 + Jensen 知情 —— */
+  { type:"narration", text:"——但你没想到，这件事会这么快传到他耳朵里。" },
+  { type:"scene", place:"NVIDIA 总部 · 顶层办公室外", time:"晚上 21:08", weather:"晴",
+    bg:"scene-office-night", mood:"tense" },
+
+  { type:"char", id:"jensen", expression:"serious", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"serious",
+    text:"……来一下我办公室。" },
+  { type:"narration", text:"你跟着他进了办公室。\n他把门关上的那一下，比平时重了一点。" },
+  { type:"text", speaker:"黄仁勋", expression:"serious",
+    text:"Marcus 来了？" },
+  { type:"text", speaker:"你", text:"……嗯。" },
+  { type:"text", speaker:"黄仁勋", expression:"serious",
+    text:"他出价多少？" },
+  { type:"text", speaker:"你", text:"……三倍。" },
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"……（沉默几秒）" },
+  { type:"text", speaker:"黄仁勋", expression:"sad",
+    text:"我没有资格留你。\n如果你想去，告诉我，我帮你写推荐信。" },
+
+  { type:"narration", text:"……他说出这句话的时候，身体微不可察地紧了一下。\n你忽然意识到——\n他在害怕。" },
+  { type:"narration", text:"那个站在台上能让一万两千人屏息的男人，正在害怕一个新员工的离开。" },
+
+  { type:"choice", choices:[
+    { text:"「我没考虑过去。」",                       affection:8  },
+    { text:"「您让我留下，我就留。」",                 affection:13, flag:{key:"chose_jensen",value:true} },
+    { text:"「……您要是说舍不得我，我可能更舍不得您。」", affection:16, flag:{key:"emotional_loyalty",value:true} },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（从抽屉里拿出一只 NV1 的迷你模型，放到你面前）\n……这个先送给你。" },
+  { type:"text", speaker:"你", text:"为什么？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"提醒你——你刚才的那句话，今晚就被印进 NVIDIA 的历史了。\n失败和坚持都是历史的一部分。" },
+  { type:"flag", key:"nv1_gift", value:true },
+  { type:"narration", text:"你接过那枚指甲盖大小的小芯片，掌心忽然有点发烫。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"……回去休息。\nGTC 还有十天，我们要做的事情还很多。" },
+  { type:"narration", text:"你点头，转身走出办公室。\n关门的瞬间，你回头看了一眼——\n他正坐在桌前，把那只 NV1 玻璃柜重新拉开，对着空出来的位置发了一会儿呆。" },
+
   { type:"goto", target:"chapter4_gtc_debug" },
 ],
 
