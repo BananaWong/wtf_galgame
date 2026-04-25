@@ -604,6 +604,63 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"黄仁勋", expression:"serious", text:"专注。说说你的思路。" },
 
   { type:"narration", text:"你们就这样分工了：你负责 Python 层的逻辑隔离，他扑向底层 kernel。\n机房里只有风扇的嗡鸣和两个人敲键盘的声音。" },
+
+  /* —— debug 中段：Colette 送宵夜 + 耳机分享 —— */
+  { type:"scene", place:"GTC 会场技术机房", time:"凌晨 03:42", weather:"晴",
+    bg:"scene-office-night", mood:"tense" },
+  { type:"narration", text:"凌晨三点四十分。门被推开。" },
+  { type:"char", id:"colette", expression:"smile", slot:"right", placeholder:true },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"——我猜对了。\n（拎着两个保温袋走进来）你们俩肯定还在。" },
+  { type:"text", speaker:"黄仁勋", expression:"surprised",
+    text:"……Colette？" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"我刚开完日本投资人的电话。\n顺路过来看看。" },
+  { type:"narration", text:"她把保温袋放下：一份给老黄的稀饭、一份给你的鸡汤面。\n中间还有一小碟咸菜。" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"——他胃不好，深夜不能吃辣。\n这一点，你以后也注意一下。" },
+
+  { type:"choice", choices:[
+    { text:"「……我知道了。」",                   affection:8, flag:{key:"learned_diet",value:true} },
+    { text:"「Colette 您也太细心了。」",         affection:5  },
+    { text:"「谢谢您的鸡汤面。」",                 affection:5  },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……Colette，我不需要你做我妈。" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"我没在做你妈。\n（看了你一眼）我在交接。" },
+  { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……" },
+  { type:"narration", text:"Colette 轻轻笑了一下，挥挥手就走了。\n机房里又剩下你们两个人，外加两份冒着热气的宵夜。" },
+  { type:"char", id:"colette", hide:true, slot:"right" },
+
+  { type:"text", speaker:"你", text:"……「交接」是什么意思？" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（低头喝稀饭）\n……不知道。我也想问。" },
+
+  { type:"narration", text:"凌晨四点。\n你卡在一个 race condition 上，调了半小时没头绪。\n他从口袋里拿出一副有线耳机，递给你一只。" },
+  { type:"text", speaker:"你", text:"……？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"我 debug 卡的时候听这个。\n试试。" },
+  { type:"narration", text:"你戴上耳机——\n是一段非常老旧的 City Pop。\n大村憲司？山下達郎？你认不出，但旋律温柔得像有阳光透进来。" },
+  { type:"text", speaker:"你", text:"……（你们就这样一人一只耳机，并排坐着，盯着同一块屏幕）" },
+  { type:"narration", text:"耳机线很短。\n你们的肩膀离得很近。\n他每次输入一行代码，你都能感觉到那一阵微弱的震动。" },
+  { type:"flag", key:"shared_earphone", value:true },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"……你怎么样？" },
+  { type:"text", speaker:"你", text:"我没事。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"我是说……（顿了一下）……心率。" },
+  { type:"text", speaker:"你", text:"……？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"（指了一下你右手手腕的智能手表）\n屏幕一直亮着。\n你的心率从十分钟前开始，一直在 92。" },
+  { type:"text", speaker:"你", text:"……（迅速翻了下手腕，把表盖住）" },
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……我也差不多。\n但是我没戴表。" },
+  { type:"narration", text:"——他这句话说完，自己也愣了一下。\n机房里的风扇声忽然大了一倍。" },
+
   { type:"narration", text:"凌晨四点半，他发现了真正的根因——一个隐藏在驱动层的 race condition，\n只在 tensor 维度是 8 的倍数时才触发。" },
 
   { type:"text", speaker:"黄仁勋", expression:"proud",
