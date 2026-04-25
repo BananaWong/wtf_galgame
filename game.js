@@ -917,9 +917,9 @@ interlude_router: [
   { type:"text", speaker:"你", text:"……（一秒识别出声音）老黄？！" },
   { type:"text", speaker:"黄仁勋", text:"嘘——别那么大声。\n……你今天有事吗？" },
   { type:"text", speaker:"你", text:"……没有。" },
-  { type:"text", speaker:"黄仁勋", text:"……我家里有一块 1995 年的 SCSI 硬盘，刚才尝试备份的时候 controller 死了。\n里面有一些……我比较在意的东西。" },
+  { type:"text", speaker:"黄仁勋", text:"……家里有块 1995 年的 SCSI 硬盘。\n刚才想做个备份，controller 死了。\n里面有点东西，我不太想丢。" },
   { type:"text", speaker:"你", text:"……您让我去您家？" },
-  { type:"text", speaker:"黄仁勋", text:"……如果你不介意。\n（顿了顿）……我没找别人。" },
+  { type:"text", speaker:"黄仁勋", text:"……如果你不介意。\n（顿了顿）我没找别人。" },
 
   { type:"choice", choices:[
     { text:"「半小时到。」",                   affection:8 },
@@ -930,23 +930,23 @@ interlude_router: [
   /* —— 老黄家 · 半山的小别墅 —— */
   { type:"scene", place:"硅谷半山 · 黄仁勋私宅", time:"上午 10:38", weather:"晴",
     bg:"scene-rooftop", mood:"calm" },
-  { type:"narration", text:"半山的一栋小别墅。\n外观很普通，连邻居都不知道这里住的是谁。" },
-  { type:"narration", text:"门口没有保镖，只有一台旧的智能门铃。\n你按下，门开了。" },
+  { type:"narration", text:"半山的一栋小别墅。\n外观普通——邻居大概都不知道这里住的是谁。" },
+  { type:"narration", text:"门口没保镖，只有一台旧的智能门铃。\n你按下去——门开了。" },
 
   { type:"char", id:"jensen", expression:"shy", pose:"stand", slot:"center", placeholder:true },
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……（穿着家居服站在门口）\n……进来。" },
-  { type:"narration", text:"你愣住了。\n你这辈子第一次，看见黄仁勋穿着不是皮夹克的衣服——\n灰色的长袖卫衣，下面是宽松的运动裤。" },
-  { type:"narration", text:"……他甚至光着脚。" },
+  { type:"narration", text:"……你愣住了。\n这辈子第一次见黄仁勋不穿皮夹克——\n灰色的长袖卫衣，宽松的运动裤。" },
+  { type:"narration", text:"……他还光着脚。" },
   { type:"flag", key:"saw_home_clothes", value:true },
 
   { type:"text", speaker:"你", text:"……黄总。" },
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"……今天叫我 Jensen 就好。\n这里不是公司。" },
 
-  { type:"narration", text:"客厅不大，整面墙都是书柜。\n上面一半是技术书，下面一半是各种杂志、漫画、甚至还有一格放着乐高。" },
-  { type:"narration", text:"墙上挂着一张很老的合影——\n黄仁勋，年轻的他，和几位早期员工。所有人手里举着第一代 RIVA。\n旁边还挂着一些他孩子小时候的画——已经发黄。" },
-  { type:"narration", text:"你忽然意识到——\n你是在他「人」的那一面，而不是「CEO」的那一面。" },
+  { type:"narration", text:"客厅不大。整面墙都是书柜——\n上面一半是技术书。\n下面一半是杂志、漫画。\n中间一格放着乐高。" },
+  { type:"narration", text:"墙上挂着一张很老的合影——\n年轻的他和几位早期员工，每人手里举着第一代 RIVA。\n旁边还挂着几张孩子小时候的画，纸都发黄了。" },
+  { type:"narration", text:"……这不是 CEO 的那一面。\n这是「人」的那一面。" },
 
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"……硬盘在我书房。" },
@@ -955,13 +955,14 @@ interlude_router: [
   { type:"scene", place:"黄仁勋私宅 · 书房", time:"上午 10:50", weather:"晴",
     bg:"scene-cafe", mood:"calm" },
 
-  { type:"narration", text:"书房比客厅小，但更乱。\n一张大书桌上堆满了纸——是各种论文打印件，每一份都做了批注。" },
-  { type:"narration", text:"角落里堆着两台老式塔式机箱。\n他指着其中一台——" },
+  { type:"narration", text:"书房比客厅小，但更乱。\n书桌上堆着一摞摞论文打印件，每份都做过批注。" },
+  { type:"narration", text:"角落里立着两台老式塔式机箱。\n他指着其中一台——" },
   { type:"text", speaker:"黄仁勋", expression:"thinking",
     text:"——这台是 1996 年我自己装的工作站。\n里面那块 SCSI 硬盘，挂的是当年 NV1 的所有调试日志。\n……还有一些我自己写的 demo 代码。" },
   { type:"text", speaker:"你", text:"……（蹲下来）\n这个 controller 我看一下。" },
 
-  { type:"narration", text:"你打开机箱。一阵灰尘扑面。\n你伸手拨开线缆的时候，他递过来一支手电筒。\n指尖碰到指尖。\n你们都没说话，但都没缩回手。" },
+  { type:"narration", text:"你打开机箱。\n一股灰尘扑出来。\n你伸手拨线的时候——他正好把手电筒递过来。" },
+  { type:"narration", text:"指尖碰到指尖。\n你们都没出声，也都没缩回手。" },
 
   { type:"text", speaker:"你", text:"……（轻咳）控制器电容鼓了。\n大概率换一颗就好。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
@@ -977,8 +978,8 @@ interlude_router: [
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"……谢谢你。\n（顿了顿）这块硬盘里，有我太太当年帮我整理的项目目录。\n我一直没敢动它，怕它哪天就读不出来了。" },
 
-  { type:"narration", text:"——他第一次主动提到 Lori。\n你看了他一眼——他正盯着屏幕上那些早已斑驳的目录名，眼神很温柔，也很安静。" },
-  { type:"narration", text:"那种温柔不是给你的，是给一段过去的。\n你忽然觉得——这些过去，是他能成为他的一部分。\n你没有嫉妒，反而有一种……被信任的感觉。" },
+  { type:"narration", text:"——他第一次主动提 Lori。\n你看了他一眼——\n他正盯着屏幕上那些斑驳的目录名，眼神很温，但也很远。" },
+  { type:"narration", text:"那种温柔不是给你的，是给一段过去的。\n你没嫉妒——反倒有一种被信任的踏实。" },
 
   { type:"choice", choices:[
     { text:"「她一定是个很好的人。」",                     affection:11, flag:{key:"respect_past",value:true} },
@@ -989,8 +990,8 @@ interlude_router: [
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"……（轻声）她是。\n……谢谢你这么说。" },
 
-  { type:"narration", text:"中午他做了一份简单的炒饭。\n你在他厨房里发现一个细节——他冰箱门上贴着一张便利贴，是他孩子用蜡笔写的：\n「Dad, 别又只吃泡面。」" },
-  { type:"narration", text:"你没说出来，但你笑了。" },
+  { type:"narration", text:"中午他做了份简单的炒饭。\n你在厨房注意到一个细节——\n冰箱门上贴着一张便利贴，孩子用蜡笔写的：\n「Dad, 别又只吃泡面。」" },
+  { type:"narration", text:"你没声张，只是笑了一下。" },
 
   { type:"narration", text:"下午你离开他家的时候，他站在门口，挥了一下手。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
@@ -999,8 +1000,9 @@ interlude_router: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"……拜托保密。\n（笑着关门）" },
 
-  { type:"narration", text:"你走出小区，回头看那栋朴素的小别墅。\n阳光正好。\n你忽然明白了一件事——\n你不只是在了解一个 CEO，你在了解一个完整的人。\n包括他的过去，他的孩子的字迹，他冰箱门上贴着的小纸条。" },
-  { type:"narration", text:"——而他，也愿意把这些给你看了。" },
+  { type:"narration", text:"你走出小区，回头看了那栋朴素的小别墅一眼。\n阳光很好。" },
+  { type:"narration", text:"你不只是在了解一个 CEO——\n你在了解一个完整的人。\n他的过去。他孩子的字迹。他冰箱门上的小纸条。" },
+  { type:"narration", text:"——而他，愿意把这些给你看。" },
   { type:"goto", target:"interlude_colette" },
 ],
 
@@ -1012,10 +1014,10 @@ interlude_colette: [
     bg:"scene-lobby", mood:"calm", clearChars:true },
   { type:"char", id:"colette", expression:"smile", slot:"center", placeholder:true },
 
-  { type:"narration", text:"GTC 结束后第三天。\n你正打算下班，工卡在闸机上刷过的瞬间——手机亮了。" },
+  { type:"narration", text:"GTC 结束后第三天。\n你刚刷过闸机准备下班——手机亮了。" },
   { type:"narration", text:"「Colette: 上来一下，CFO 办公室。喝杯茶。」" },
   { type:"narration", text:"……喝杯茶？" },
-  { type:"narration", text:"你掉头进了电梯。三十二楼，比 Jensen 那间低一层。" },
+  { type:"narration", text:"你掉头进了电梯。\n三十二楼。比 Jensen 那间低一层。" },
 
   { type:"text", speaker:"Colette", expression:"smile",
     text:"来了。\n喝乌龙还是大吉岭？" },
@@ -1024,7 +1026,8 @@ interlude_colette: [
     text:"（一边烧水一边）\n你品味跟他像。" },
   { type:"text", speaker:"你", text:"（心里咯噔了一下）" },
 
-  { type:"narration", text:"她的办公室不大，但很干净。书架上一半是财报，一半是诗集。\n墙上挂着一张照片——年轻的 Colette、年轻的 Jensen，还有两三个其他人，站在一栋很小的办公室门口，每人手里拿着一台 PC。" },
+  { type:"narration", text:"办公室不大，但很干净。\n书架一半放着财报，一半放着诗集。" },
+  { type:"narration", text:"墙上挂着一张老照片——\n年轻的 Colette，年轻的 Jensen，还有两三个其他人。\n他们站在一栋很小的办公楼门口，每人手里抱着一台 PC。" },
 
   { type:"text", speaker:"你", text:"（指着照片）……这是？" },
   { type:"text", speaker:"Colette", expression:"warm",
@@ -1033,7 +1036,7 @@ interlude_colette: [
   { type:"text", speaker:"Colette", expression:"smile",
     text:"中间走了几年，又回来了。\n不是因为他给的钱多——是因为他这个人，让人放不下。" },
 
-  { type:"narration", text:"她把茶推到你面前。乌龙的香气在两个人中间散开，安静得能听见时钟的滴答声。" },
+  { type:"narration", text:"她把茶推到你面前。\n屋里安静得能听见时钟在走。" },
 
   { type:"text", speaker:"Colette", expression:"serious",
     text:"我直接问你。\n你跟他，到底想到哪一步？" },
@@ -1057,8 +1060,8 @@ interlude_colette: [
   { type:"text", speaker:"Colette", expression:"warm",
     text:"意味着——\n他这一次，没有把自己留在台上。" },
 
-  { type:"narration", text:"那句话像一颗轻巧的石子，砸进了你心底很深的地方。" },
-  { type:"narration", text:"你想说什么，但 Colette 笑了笑，挥了挥手。" },
+  { type:"narration", text:"……那句话很轻。\n但你的心被砸了一下。" },
+  { type:"narration", text:"你想说点什么——Colette 笑了笑，先摆手。" },
 
   { type:"text", speaker:"Colette", expression:"smile",
     text:"我不是要给你压力。\n相反——如果你接得住，我替我们这些老兵高兴。" },
@@ -1085,8 +1088,8 @@ interlude_colette: [
   { type:"text", speaker:"Colette", expression:"warm",
     text:"（笑而不语，挥挥手）\n回去吧。" },
 
-  { type:"narration", text:"走出大楼的时候，风有点凉。\n你抱着那杯还冒着热气的乌龙，脑子里反复回放着她最后那句话。" },
-  { type:"narration", text:"皮夹克。脱掉。才是真的。" },
+  { type:"narration", text:"走出大楼，风有点凉。\n你抱着那杯还烫的乌龙，脑子里反复回放她最后那句话。" },
+  { type:"narration", text:"皮夹克。\n脱掉。\n才是真的。" },
   { type:"narration", text:"……什么意思？" },
   { type:"goto", target:"chapter5_gtc_keynote" },
 ],
