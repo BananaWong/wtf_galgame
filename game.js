@@ -486,8 +486,96 @@ chapter4_gtc_debug: [
 
   { type:"narration", text:"天亮前，你们在一家小小的早餐店里吃完了一整套烧饼油条。\n他给你讲了 1993 年的台湾，讲了他父亲是怎么看待他「不务正业」创业的。\n你第一次听到他讲家人——那种讲法，是只有对信任的人，才会有的讲法。" },
   { type:"flag", key:"breakfast_together", value:true },
+  { type:"goto", target:"interlude_colette" },
+],
+
+/* ================================================================
+   过场：Colette 的茶
+   ================================================================ */
+interlude_colette: [
+  { type:"scene", place:"NVIDIA 总部 · CFO 办公室", time:"傍晚 17:50", weather:"晴",
+    bg:"scene-lobby", mood:"calm", clearChars:true },
+  { type:"char", id:"colette", expression:"smile", slot:"center", placeholder:true },
+
+  { type:"narration", text:"GTC 结束后第三天。\n你正打算下班，工卡在闸机上刷过的瞬间——手机亮了。" },
+  { type:"narration", text:"「Colette: 上来一下，CFO 办公室。喝杯茶。」" },
+  { type:"narration", text:"……喝杯茶？" },
+  { type:"narration", text:"你掉头进了电梯。三十二楼，比 Jensen 那间低一层。" },
+
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"来了。\n喝乌龙还是大吉岭？" },
+  { type:"text", speaker:"你", text:"……乌龙。" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"（一边烧水一边）\n你品味跟他像。" },
+  { type:"text", speaker:"你", text:"（心里咯噔了一下）" },
+
+  { type:"narration", text:"她的办公室不大，但很干净。书架上一半是财报，一半是诗集。\n墙上挂着一张照片——年轻的 Colette、年轻的 Jensen，还有两三个其他人，站在一栋很小的办公室门口，每人手里拿着一台 PC。" },
+
+  { type:"text", speaker:"你", text:"（指着照片）……这是？" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"1996 年。当时全公司就这么些人。\n那台机器……是我们的第一款 RIVA。三个月后我们差点破产。" },
+  { type:"text", speaker:"你", text:"您从那时候就在？" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"中间走了几年，又回来了。\n不是因为他给的钱多——是因为他这个人，让人放不下。" },
+
+  { type:"narration", text:"她把茶推到你面前。乌龙的香气在两个人中间散开，安静得能听见时钟的滴答声。" },
+
+  { type:"text", speaker:"Colette", expression:"serious",
+    text:"我直接问你。\n你跟他，到底想到哪一步？" },
+
+  { type:"choice", choices:[
+    { text:"「……我也还在想。」",                 affection:5  },
+    { text:"「认真的那种。」",                   affection:10, flag:{key:"colette_serious",value:true} },
+    { text:"「您为什么问这个？」",               affection:7  },
+  ]},
+
+  { type:"text", speaker:"Colette", expression:"warm", text:"……好。" },
+  { type:"text", speaker:"Colette", expression:"serious",
+    text:"我跟你说一件事，你听完，自己决定。\n他这个人，对外强势，对内极度自律。三十年了，从他一开始创业到现在，\n他没给自己留过一个真正的「下班时间」。" },
+  { type:"text", speaker:"你", text:"……" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"我们这些老员工，看着他从黑发熬到白发。\n中间几个本来很合适的人，都没等到他停下来——后来就各走各的了。" },
+  { type:"text", speaker:"你", text:"（手心慢慢出汗）" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"GTC 那天他下台第一个找你。\n你知道这意味着什么吗？" },
+  { type:"text", speaker:"你", text:"……我猜不到。" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"意味着——\n他这一次，没有把自己留在台上。" },
+
+  { type:"narration", text:"那句话像一颗轻巧的石子，砸进了你心底很深的地方。" },
+  { type:"narration", text:"你想说什么，但 Colette 笑了笑，挥了挥手。" },
+
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"我不是要给你压力。\n相反——如果你接得住，我替我们这些老兵高兴。" },
+  { type:"text", speaker:"Colette", expression:"serious",
+    text:"但如果你接不住——别拖。\n他这个人，认真起来，是真的认真。受伤也是真的伤。" },
+
+  { type:"choice", choices:[
+    { text:"「我不会让他受伤。」",                 affection:14, flag:{key:"colette_blessed",value:true} },
+    { text:"「我会想清楚再回答您。」",             affection:8  },
+    { text:"「……我现在比刚进来的时候，紧张多了。」", affection:10 },
+  ]},
+
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"（轻笑）紧张就对了。\n说明你在认真想。" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"……走吧。茶你带回去喝，杯子下次还我。" },
+  { type:"narration", text:"你站起身，走到门口，回头看了她一眼。" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"对了。" },
+  { type:"text", speaker:"你", text:"嗯？" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"那个皮夹克——\n如果哪天他在你面前脱掉，那才是真的。" },
+  { type:"text", speaker:"你", text:"……？" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"（笑而不语，挥挥手）\n回去吧。" },
+
+  { type:"narration", text:"走出大楼的时候，风有点凉。\n你抱着那杯还冒着热气的乌龙，脑子里反复回放着她最后那句话。" },
+  { type:"narration", text:"皮夹克。脱掉。才是真的。" },
+  { type:"narration", text:"……什么意思？" },
   { type:"goto", target:"chapter5_gtc_keynote" },
 ],
+
 
 /* ================================================================
    第五章：GTC 发布夜
