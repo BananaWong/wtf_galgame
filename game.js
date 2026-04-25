@@ -636,11 +636,12 @@ interlude_birthday: [
   { type:"scene", place:"NVIDIA 总部 · 你的工位", time:"上午 10:08", weather:"小雨",
     bg:"scene-lobby", mood:"calm", clearChars:true },
 
-  { type:"narration", text:"二月十七日。\n你登入工位电脑，日历上有一行小字提醒——\n但不是会议，是你自己之前偷偷做了一个标记。" },
+  { type:"narration", text:"二月十七日。" },
+  { type:"narration", text:"你登入工位电脑。\n日历上有一行小字提醒——不是会议，是你一个月前偷偷打的标记。" },
   { type:"narration", text:"「J's bday」。" },
-  { type:"narration", text:"你是一个月前在维基百科上看到的：\n黄仁勋。1963 年 2 月 17 日，台南出生。" },
-  { type:"narration", text:"当时你看到这条信息，第一反应是——\n他从来不庆祝。" },
-  { type:"narration", text:"上次开年会的时候你听 Colette 提过：「他这辈子没在公司过过生日。」\n据说是因为创业头几年压力太大，他索性把这个日子抹掉了。" },
+  { type:"narration", text:"维基百科上写的：\n黄仁勋。1963 年 2 月 17 日，台南出生。" },
+  { type:"narration", text:"……你看到那条信息的时候，第一反应是——\n他从来不庆祝。" },
+  { type:"narration", text:"上次年会，Colette 顺口提过一句：\n「他这辈子没在公司过过生日。」\n创业头几年熬得太狠，索性就把这天跳过去了。" },
 
   { type:"choice", choices:[
     { text:"「（什么都不做。他不会想被打扰。）」", affection:0 },
@@ -657,17 +658,17 @@ interlude_birthday: [
   { type:"text", speaker:"老太太", text:"For yourself?" },
   { type:"text", speaker:"你", text:"……不是。\n是给一个不喜欢被庆祝的人。" },
   { type:"text", speaker:"老太太", text:"Ahh.\n（笑了笑）那种人最需要一个小蛋糕。" },
-  { type:"narration", text:"她从冰柜里拿出一个手掌大小的栗子蒙布朗，认真地包好。\n包装纸上盖了一个小小的椭圆印章——是那家店的 logo，一只画得有点歪的猫。" },
+  { type:"narration", text:"她从冰柜里拿出一个手掌大的栗子蒙布朗，慢慢包好。\n包装纸上盖了一只画得歪歪的猫——店的 logo。" },
 
   /* —— 晚上回到他办公室门口 —— */
   { type:"scene", place:"NVIDIA 总部 · 顶层办公室门外", time:"深夜 22:36", weather:"晴",
     bg:"scene-office-night", mood:"calm" },
 
-  { type:"narration", text:"你犹豫了很久，蹲在他办公室门外的走廊里。\n蛋糕装在纸盒里，已经凉了。" },
-  { type:"narration", text:"你不敢敲门——\n你怕他正在 debug、在开会、或者只是在想事情。" },
-  { type:"narration", text:"于是你只是把蛋糕放在门口，转身离开。" },
+  { type:"narration", text:"你在走廊里蹲了很久。\n纸盒里的蛋糕已经凉了。" },
+  { type:"narration", text:"你不敢敲门。\n他可能在 debug。可能在开会。可能只是想一个人坐着。" },
+  { type:"narration", text:"——你最后只是把蛋糕放在门口，转身。" },
 
-  { type:"narration", text:"——但是，你刚走出三步，门就开了。" },
+  { type:"narration", text:"刚走出三步——\n门开了。" },
 
   { type:"char", id:"jensen", expression:"surprised", pose:"stand", slot:"center", placeholder:true },
   { type:"text", speaker:"黄仁勋", expression:"surprised",
@@ -679,9 +680,9 @@ interlude_birthday: [
     text:"（很轻）……你怎么知道？" },
   { type:"text", speaker:"你", text:"……（一时不知道怎么说）我是工程师，查过您的 wiki。" },
   { type:"text", speaker:"黄仁勋", expression:"laugh",
-    text:"……（蹲下身，慢慢拿起小盒子）\n……整整三十年。\n没有人在公司给我送过蛋糕。" },
+    text:"……（蹲下身，慢慢拿起盒子）\n……三十年了。\n没人在公司给我送过蛋糕。" },
 
-  { type:"narration", text:"他把盒子托在手里，像捧一只很轻的鸟。\n你有点想哭，但忍住了。" },
+  { type:"narration", text:"他双手把盒子捧着。\n你看着，鼻子酸了一下。" },
 
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"进来。\n陪我吃完。" },
@@ -692,12 +693,12 @@ interlude_birthday: [
   { type:"text", speaker:"你", text:"……您抽屉里居然有塑料叉子。" },
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……（慢慢辩解）以前出差经常吃外卖。" },
-  { type:"narration", text:"你们坐在沙发上，把那个手掌大的小蒙布朗，一人一口分着吃。\n窗外是台北 101 的灯。\n房间里只有蛋糕的甜味和你心跳的声音。" },
+  { type:"narration", text:"你们坐在沙发上。\n手掌大的蒙布朗，一人一口分着吃。\n窗外是台北 101。\n屋里只有甜味——和你的心跳。" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
     text:"……我有一件东西，从一年前就想送出去，但一直没找到合适的时机。" },
   { type:"text", speaker:"你", text:"嗯？" },
-  { type:"narration", text:"他从书桌的最下层抽屉拿出一个小小的红木盒子。\n盒子打开——\n是一只很旧的银色钥匙。" },
+  { type:"narration", text:"他从书桌最下层抽屉里取出一个小红木盒。\n打开——\n里面是一把很旧的银色钥匙。" },
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"……这是 1993 年我们第一间办公室的钥匙。\n那间办公室早就没了，但这把钥匙我一直留着。" },
   { type:"text", speaker:"黄仁勋", expression:"shy",
@@ -711,10 +712,10 @@ interlude_birthday: [
   ]},
 
   { type:"text", speaker:"黄仁勋", expression:"smile",
-    text:"……（轻声）一定。" },
-  { type:"narration", text:"他把那把银色的小钥匙放进你掌心。\n钥匙比你想象的要轻，但你掌心却像握住了某种特别沉的东西。" },
-  { type:"narration", text:"窗外的雨不知什么时候停了。\n台北的灯光像无数只小烛火，在远处静静摇曳。" },
-  { type:"narration", text:"——这一年的二月十七日。\n是 NVIDIA 历史上，第一次有人为黄仁勋庆祝生日。" },
+    text:"……（声音很轻）一定。" },
+  { type:"narration", text:"他把钥匙放进你掌心。\n很轻——但很沉。" },
+  { type:"narration", text:"窗外的雨不知什么时候停了。\n远处是台北的灯火。" },
+  { type:"narration", text:"——二月十七日。\nNVIDIA 第一次给黄仁勋过生日。" },
   { type:"goto", target:"chapter4_gtc_debug" },
 ],
 
