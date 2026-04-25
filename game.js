@@ -36,13 +36,31 @@ window.GAME_SCRIPT = {
    序章：入职第一天
    ================================================================ */
 prologue: [
+  /* —— 入职前夜 · 内心独白 —— */
+  { type:"scene", place:"圣何塞 · 出租公寓", time:"凌晨 03:14", weather:"夜雨",
+    bg:"scene-cafe", mood:"calm", charName:"黄仁勋", clearChars:true },
+
+  { type:"narration", text:"——入职前一夜。" },
+  { type:"narration", text:"你坐在出租公寓的飘窗上，没开灯。\n窗外的街灯隔着雨水，被拉成一条一条柔软的光线。" },
+  { type:"narration", text:"明天的衬衫已经熨好了，挂在衣柜门上。\n胸牌还没发，但 offer letter 已经被你重读了不下二十遍。" },
+  { type:"narration", text:"……NVIDIA。" },
+  { type:"narration", text:"你硕士答辩那天，导师给你转过来一个链接。\n是黄仁勋在 GTC 上的 keynote。\n你看了三个小时，第二天，就跟室友说：「我要去那家公司。」" },
+  { type:"narration", text:"室友笑你：「人家那是天梯，你梯子都没搭到一半。」" },
+  { type:"narration", text:"……六年后。\n你真的搭上了。" },
+  { type:"text", speaker:"你", text:"……明天就要见到他了。" },
+  { type:"narration", text:"心跳声在公寓的安静里显得格外大。\n你知道明天只是一次普通的入职——\n但你也知道，从你点开那条 keynote 链接的瞬间，今天就已经在路上了。" },
+  { type:"narration", text:"窗外的雨慢慢停了。\n你睡过去的时候，天已经快亮。" },
+
+  /* —— 入职日 —— */
   { type:"scene", place:"NVIDIA 总部 · 大厅", time:"清晨 09:02", weather:"晴朗",
-    bg:"scene-lobby", mood:"calm", charName:"黄仁勋", clearChars:true },
+    bg:"scene-lobby", mood:"calm" },
 
   { type:"narration", text:"2024 年，硅谷的春天。\n空气里有栀子花香，还有某种说不清楚的……期待。" },
   { type:"narration", text:"你手里攥着那张绿色胸牌，脑子里反复回放着签 offer 时的激动。\nNVIDIA。你终于进来了。" },
   { type:"text", speaker:"你", text:"（深呼吸）……今天开始，我是 Team Green 的一员了。" },
   { type:"narration", text:"大厅里那块巨大的 GPU 芯片装置散发着幽幽的绿色光芒，像一枚未来的印章。" },
+  { type:"narration", text:"墙上挂着公司的发展时间轴：\n1993 — 创立。\n1999 — IPO。\n2006 — CUDA。\n2016 — DGX-1。\n2024 — ……尚未填写。" },
+  { type:"narration", text:"你站在那条时间轴下面看了很久。\n2024 年那一格还空着——好像在等一个故事被填进去。" },
   { type:"text", speaker:"前台小姐姐", text:"欢迎加入 NVIDIA！请问是新入职的工程师吗？" },
   { type:"text", speaker:"你", text:"是的，今天第一天报到。" },
   { type:"text", speaker:"前台小姐姐", text:"哦！你就是那位……黄总特别点名要见的新人？" },
