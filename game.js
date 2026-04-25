@@ -1411,8 +1411,8 @@ interlude_ryan: [
   { type:"scene", place:"旧金山 · 渔人码头某酒馆", time:"傍晚 19:20", weather:"晴",
     bg:"scene-cafe", mood:"calm", clearChars:true },
 
-  { type:"narration", text:"东京回来后第三天。\n大学同窗 Ryan 给你发消息——他来旧金山出差，问你今晚有没有空喝一杯。" },
-  { type:"narration", text:"你已经一年多没见他了。\n上次见，是他刚跳槽到湾区一家做 LLM infra 的中型公司。" },
+  { type:"narration", text:"东京回来第三天。\n大学同窗 Ryan 发来消息——他来旧金山出差，问你晚上有没有空喝一杯。" },
+  { type:"narration", text:"你已经一年多没见他了。\n上次见面，是他刚跳到湾区一家做 LLM infra 的中型公司。" },
 
   { type:"narration", text:"——酒馆里。\n他比你先到，已经开了一瓶 IPA。" },
   { type:"text", speaker:"Ryan", text:"哟——稀有动物现身了。\n一年没见，发福了。" },
@@ -1443,13 +1443,13 @@ interlude_ryan: [
   { type:"text", speaker:"你", text:"（红了脸）……不要乱猜。" },
   { type:"text", speaker:"Ryan", text:"……（看了你三秒）……你没乱猜也乱不到这里。" },
 
-  { type:"narration", text:"Ryan 沉默了一会儿，把杯子放下。\n他这个人平时嘴贱，但真正认真的时候，眼睛会变得很稳。" },
+  { type:"narration", text:"Ryan 把杯子放下，沉默了一会儿。\n他这人平时嘴贱——但要认真起来，眼神会变得很稳。" },
 
   { type:"text", speaker:"Ryan", text:"……我不评判。\n他这个人，就算抛开 CEO 那一层，单看为人，确实——很 NVIDIA。" },
   { type:"text", speaker:"你", text:"……什么意思？" },
   { type:"text", speaker:"Ryan", text:"很硬核。\n硬核到你想跟他比拼一辈子，那种。" },
 
-  { type:"narration", text:"你笑了一下。\n这是你第一次在朋友面前承认这件事，没那么尴尬。\n——反而像是把心里某根紧绷了好久的弦，松开了一格。" },
+  { type:"narration", text:"你笑了一下。\n这是你第一次在朋友面前说出来——\n没想象中尴尬。反而松了一口气。" },
 
   { type:"text", speaker:"Ryan", text:"我就一个建议——\n你想清楚自己要的是什么。" },
   { type:"text", speaker:"Ryan", text:"是想跟他工作十年，还是想跟他活十年。\n这两个不冲突，但侧重点不一样。" },
@@ -1471,9 +1471,9 @@ interlude_ryan: [
   { type:"text", speaker:"你", text:"……（笑）……希望用不上。" },
   { type:"text", speaker:"Ryan", text:"嗯。我也希望用不上。" },
 
-  { type:"narration", text:"那天晚上你回家，走在码头边的木板路上。\n海风很大，但你不冷。" },
-  { type:"narration", text:"——把这件事说出来，原来是这种感觉。\n你松了一口气，心里也明白了一点：" },
-  { type:"narration", text:"……你不只是在喜欢一个 CEO。\n你是在喜欢——一个普通人。\n一个会蹲在 7-Eleven 冷藏柜前犹豫泡面、深夜亲手帮你修 bug、被打开抽屉就有塑料叉子的，普通人。" },
+  { type:"narration", text:"那晚你走回家，沿着码头边的木板路。\n海风很大——但你不冷。" },
+  { type:"narration", text:"……把这件事说出口，原来是这种感觉。" },
+  { type:"narration", text:"你喜欢的不只是一个 CEO。\n是一个会在 7-Eleven 冷藏柜前犹豫一盒泡面的人。\n一个凌晨两点坐下来帮你 debug 的人。\n一个抽屉里随手就有塑料叉子的人。" },
   { type:"goto", target:"chapter7_rooftop" },
 ],
 
@@ -1485,9 +1485,9 @@ chapter7_rooftop: [
   { type:"scene", place:"NVIDIA 总部 · 你的工位", time:"傍晚 18:40", weather:"晴",
     bg:"scene-lobby", mood:"calm", clearChars:true },
 
-  { type:"narration", text:"东京回来后，他消失了一段时间。\n出席了三场峰会，飞了六个城市，没有主动联系你。" },
-  { type:"narration", text:"你告诉自己：他是 CEO，他有一万件事要做。\n你告诉自己：那个雨夜只是气氛烘托。\n你告诉自己：……不要动摇。" },
-  { type:"narration", text:"但你每天检查手机的次数，比你 commit 的次数还多。" },
+  { type:"narration", text:"东京回来后，他消失了一段时间。\n三场峰会，六个城市。\n没有主动联系你。" },
+  { type:"narration", text:"你告诉自己：他是 CEO，他有一万件事要做。\n你告诉自己：那个雨夜只是气氛烘托。\n你告诉自己：……不要乱想。" },
+  { type:"narration", text:"——但你每天检查手机的次数，比 commit 还多。" },
 
   { type:"text", speaker:"你", text:"（盯着屏幕，第三次输错密码）……" },
   { type:"text", speaker:"你", text:"（深呼吸）专注。\n他没消息，是因为他忙。\n你不要乱想。" },
@@ -1500,7 +1500,7 @@ chapter7_rooftop: [
     text:"……你又在等他消息？" },
   { type:"text", speaker:"你", text:"……（被抓包）我没有。" },
   { type:"text", speaker:"Colette", expression:"smile",
-    text:"他从来都是这样。一旦想清楚一件事，他会先消失，然后回来给你一击。" },
+    text:"他这人就这样。\n要想清楚一件事——会先消失，再回来给你一击。" },
   { type:"text", speaker:"你", text:"……一击？" },
   { type:"text", speaker:"Colette", expression:"warm",
     text:"……做好心理准备。\n（顿了顿）也做好幸福的准备。" },
@@ -1513,11 +1513,10 @@ chapter7_rooftop: [
   { type:"scene", place:"圣何塞 · 7-Eleven 街角", time:"晚上 21:14", weather:"骤雨",
     bg:"scene-cafe", mood:"calm" },
   { type:"narration", text:"——他消失的第七天。" },
-  { type:"narration", text:"加州罕见的暴雨。\n你伞没带，临时跑进路口的 7-Eleven 躲雨。" },
-  { type:"narration", text:"店里只有一个收银员、一只睡着的猫、和几排冷藏柜。\n热柜里的关东煮在咕嘟咕嘟地冒泡。" },
-  { type:"narration", text:"你随手拿了瓶水准备结账——\n余光瞥见冷藏柜前蹲着一个人。" },
+  { type:"narration", text:"加州难得一见的暴雨。\n你没带伞，跑进路口的 7-Eleven 躲。" },
+  { type:"narration", text:"店里只有一个收银员，一只睡着的猫，几排冷藏柜。\n关东煮的热柜咕嘟咕嘟在响。" },
+  { type:"narration", text:"你拿了瓶水准备结账——\n余光瞥到冷藏柜前蹲着个人。" },
   { type:"narration", text:"……黑色皮夹克。\n……白头发。" },
-  { type:"narration", text:"……" },
 
   { type:"char", id:"jensen", expression:"surprised", pose:"stand", slot:"center", placeholder:true },
   { type:"text", speaker:"黄仁勋", expression:"surprised",
@@ -1532,7 +1531,7 @@ chapter7_rooftop: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"……回家路上突然想吃。\n（默默把另一盒同款放回去）……不要告诉 Colette。" },
 
-  { type:"narration", text:"你忍不住笑了——\n这种被抓包的表情，跟一个普通人没区别。" },
+  { type:"narration", text:"你忍不住笑了出来。\n这副被抓包的表情——跟一个普通人没什么两样。" },
 
   { type:"choice", choices:[
     { text:"「（拿过他手里的泡面，加了一袋鱼丸）一起。」", affection:13, flag:{key:"rainy_share",value:true} },
@@ -1541,8 +1540,8 @@ chapter7_rooftop: [
   ]},
 
   { type:"text", speaker:"黄仁勋", expression:"shy", text:"……" },
-  { type:"narration", text:"你们站在便利店里，把一份泡面+鱼丸热好。\n外面的雨下得更大了。" },
-  { type:"narration", text:"店里没有座位，只有窗口一条窄长的台。\n你们并排站着，看雨水在马路上打出细小的水花。" },
+  { type:"narration", text:"你们把那份泡面加鱼丸热好。\n外面的雨更大了。" },
+  { type:"narration", text:"店里没座位，只有窗口边一条窄长的台。\n你们并排站着，看雨水砸在马路上。" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
     text:"……这十天，对不起。" },
@@ -1551,24 +1550,24 @@ chapter7_rooftop: [
     text:"我在想一件事。\n想得有点狠。" },
   { type:"text", speaker:"你", text:"……什么事？" },
   { type:"text", speaker:"黄仁勋", expression:"loving",
-    text:"想——\n如果我对一个人认真起来，我能不能给得起。\n这种问题，我已经很多年没有问过自己了。" },
+    text:"想——\n如果我对一个人认真起来，我能不能给得起。\n这种问题，我已经很多年没问过自己。" },
 
-  { type:"narration", text:"……你的呼吸停了一拍。" },
+  { type:"narration", text:"……你的呼吸停了一下。" },
 
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……我没想到，会在便利店里讲这个。" },
   { type:"text", speaker:"你", text:"……我也没想到。" },
-  { type:"narration", text:"你们沉默地把那盒泡面分着吃完。\n他递了筷子给你的时候，手指停在你掌心顶端，那么一秒钟。" },
+  { type:"narration", text:"你们没再说话，把那盒泡面分着吃完。\n他递筷子给你的时候——手指在你掌心边停了一秒。" },
   { type:"flag", key:"rainy_711", value:true },
 
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"……再过几天，等我想清楚——\n我会给你一个回答。" },
   { type:"text", speaker:"你", text:"我等。" },
 
-  { type:"narration", text:"雨下得很大。\n你们各自打车走的时候，他叫的车先来。" },
-  { type:"narration", text:"他上车之前回头看了你一眼。\n那个眼神不像 CEO，不像导师，也不像朋友——\n是某种你说不出口、但全身都识别得到的东西。" },
-  { type:"narration", text:"——你一个人站在便利店门口，看着那辆车的尾灯消失在雨幕里。" },
-  { type:"narration", text:"等了七天，没等到一条消息。\n但今晚，你忽然觉得，那个回答其实已经写在他刚才的眼神里。" },
+  { type:"narration", text:"雨还在下。\n你们各自叫车，他叫的那辆先到。" },
+  { type:"narration", text:"上车前他回头看了你一眼。\n不像 CEO，不像导师，不像朋友——\n但全身都能识别到那是什么。" },
+  { type:"narration", text:"你一个人站在便利店门口。\n那辆车的尾灯，消失在雨幕里。" },
+  { type:"narration", text:"等了七天没等到消息。\n但今晚——回答其实已经写在他刚才那眼神里。" },
 
   /* —— 凌晨的消息 —— */
   { type:"narration", text:"凌晨两点四十一分，手机亮了。\n屏幕上只有六个字：" },
@@ -1580,9 +1579,7 @@ chapter7_rooftop: [
     bg:"scene-rooftop", mood:"romantic", clearChars:true },
   { type:"char", id:"jensen", expression:"thinking", pose:"leaning", slot:"center", placeholder:true },
 
-  { type:"narration", text:"东京回来后，又过了十天。\n他消失了一段时间——出席了三场峰会，飞了六个城市，没有主动联系你。" },
-  { type:"narration", text:"你以为那个雨夜只是一场气氛烘托下的瞬间。\n然后某天凌晨，手机亮了，一条消息：顶楼，有空吗？" },
-  { type:"narration", text:"那块「藏在水冷设备后面的角落」，他还放了两把椅子。\n但这次多了一个小型望远镜。" },
+  { type:"narration", text:"那块「藏在水冷设备后面的角落」，两把折叠椅还在。\n这一次——多了一个小型望远镜。" },
 
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"（指着天空）今晚云少，能看见猎户座。" },
@@ -1592,7 +1589,7 @@ chapter7_rooftop: [
   { type:"text", speaker:"你", text:"（心里：这借口有点薄）" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
-    text:"（望向城市）我有时候会来这里，想事情。\n从这里看下去，整个硅谷像一块巨大的芯片——\n每一盏灯是一个晶体管，每一条路是总线。" },
+    text:"（望向城市）\n我有时候会来这里，想事情。\n从这里往下看——整个硅谷像一块巨大的芯片。\n每一盏灯是一个晶体管，每一条路是总线。" },
   { type:"text", speaker:"你", text:"那我们是什么？" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"（想了想）\n……GPU 核心？\n负责所有真正的并行运算。" },
@@ -1609,7 +1606,7 @@ chapter7_rooftop: [
   { type:"text", speaker:"你", text:"（自豪）……这是真心话。" },
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"（笑意渐渐平静，换成一种更深的神情）\n……其实，你不只是散热片。" },
-  { type:"narration", text:"风从城市上空掠过，吹乱了他花白的发梢。\n你们之间的距离，不知道什么时候缩短了一点。" },
+  { type:"narration", text:"风从城市上空过来，吹乱了他花白的头发。\n你们之间的距离——不知什么时候，又近了一点。" },
 
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"……我想跟你说一件事。\n但说出口之前，我需要知道——\n你打算在 NVIDIA 待多久？" },
@@ -1624,8 +1621,8 @@ chapter7_rooftop: [
   { type:"text", speaker:"黄仁勋", expression:"serious", text:"……Apex 找你了？" },
   { type:"text", speaker:"你", text:"我拒绝了。" },
   { type:"text", speaker:"黄仁勋", expression:"loving",
-    text:"（沉默了很长时间，然后轻声）\n……谢谢你告诉我。\n谢谢你留下来。" },
-  { type:"narration", text:"星空下，那句话落地的声音很轻。\n但你听到了，听得很清楚。" },
+    text:"（沉默了很久，声音很轻）\n……谢谢你告诉我。\n谢谢你留下来。" },
+  { type:"narration", text:"星空下，那句话很轻。\n但你听见了。" },
 
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"我下周要去台北总部待几天。\n你……要不要一起？" },
