@@ -236,6 +236,78 @@ chapter2_cafe: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"哈！不，我们一起背。\n走，去找个白板，我有想法要画给你看。" },
   { type:"narration", text:"下午的咖啡馆里，你们占了一张桌子，用餐巾纸画满了架构图。\n窗外天色从多云变成了橙红，谁都没有注意到时间。" },
+  { type:"goto", target:"interlude_pantry" },
+],
+
+/* ================================================================
+   过场：茶水间偶遇
+   ================================================================ */
+interlude_pantry: [
+  { type:"scene", place:"NVIDIA 总部 · 28 楼茶水间", time:"上午 10:42", weather:"晴",
+    bg:"scene-lobby", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"咖啡馆那次对话之后过了五天。\n你已经把 demo 的核心架构搭起来了，今天来茶水间倒咖啡，准备继续干。" },
+  { type:"narration", text:"咖啡机正在运转，你正盯着滴壶发呆——" },
+  { type:"text", speaker:"???", text:"那台咖啡机第三档磨豆，比第二档好喝。" },
+  { type:"narration", text:"你回头。" },
+  { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"（端着马克杯，倚在柜台边）\n早。" },
+  { type:"text", speaker:"你", text:"……黄总也来茶水间？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"为什么不能？我也是员工。" },
+  { type:"text", speaker:"你", text:"（指着他的杯子）……您那个杯子上写着「世界最佳爸爸」。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（默默把杯子转了个角度）\n……女儿送的。十年前。" },
+
+  { type:"narration", text:"你忍着笑，按下咖啡机第三档。豆子开始发出更粗粝的研磨声。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking", pose:"hand_chin",
+    text:"demo 进度怎么样？" },
+  { type:"text", speaker:"你", text:"主流程跑通了。\n但是 batch 大小一上去就 OOM，可能要重新设计 attention 切片。" },
+  { type:"text", speaker:"黄仁勋", expression:"serious",
+    text:"切多大？" },
+  { type:"text", speaker:"你", text:"512。我想试 1024。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"（吹了声口哨）你胆子比 batch size 还大。" },
+
+  { type:"choice", choices:[
+    { text:"「不大就不来 NVIDIA 了。」",       affection:7  },
+    { text:"「跟着您学的。」",                 affection:9, flag:{key:"flirt_back",value:true} },
+    { text:"「……您觉得 1024 行不行？」",       affection:5  },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"行不行你跑了才知道。\n不过——（拿出手机扫了几下）" },
+  { type:"narration", text:"他把手机屏幕给你看：一段他自己写的 attention 切片代码，几年前的私人 repo。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"你参考一下。这个版本我没发出来过。" },
+  { type:"text", speaker:"你", text:"（震惊）……您随身带着？" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（耳根又红了）\n……正好昨晚我也想了一下你这个问题。" },
+  { type:"flag", key:"private_code", value:true },
+
+  { type:"narration", text:"咖啡机叮的一声响了。你伸手去取杯子的时候，他也伸手了——\n你们的手碰了一下。" },
+  { type:"narration", text:"很短，但你们都没立刻收回。" },
+
+  { type:"choice", choices:[
+    { text:"「……抱歉。」（缩回手）",                 affection:3  },
+    { text:"「您先。」（让给他）",                   affection:6  },
+    { text:"「我们好像总是节奏一致。」",             affection:11, flag:{key:"sync",value:true} },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"loving", text:"……是啊。" },
+  { type:"narration", text:"他没有继续往下说。\n但那一刻你忽然意识到——\n茶水间里的咖啡机声，再也不只是咖啡机声了。" },
+
+  { type:"narration", text:"中午回到工位，Colette 路过你的座位，停了一下。" },
+  { type:"char", id:"colette", expression:"smile", slot:"right", placeholder:true },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"（压低声音）他今天笑得不一样。\n……你也是。" },
+  { type:"text", speaker:"你", text:"（窘迫）什……什么不一样——" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"（眨眼）我什么都没说。" },
+  { type:"char", id:"colette", hide:true, slot:"right" },
+  { type:"narration", text:"她笑着走开了，留下你一个人对着电脑屏幕，发热的脸怎么都退不下去。" },
   { type:"goto", target:"chapter3_boardroom" },
 ],
 
