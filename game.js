@@ -1267,6 +1267,67 @@ chapter7_rooftop: [
   { type:"narration", text:"那天晚上，你回家躺在床上，盯着天花板。\n手机静静地放在枕边。" },
   { type:"narration", text:"你不知道自己在等什么。但你知道，你在等。" },
 
+  /* —— 第七天 · 雨天便利店偶遇 —— */
+  { type:"scene", place:"圣何塞 · 7-Eleven 街角", time:"晚上 21:14", weather:"骤雨",
+    bg:"scene-cafe", mood:"calm" },
+  { type:"narration", text:"——他消失的第七天。" },
+  { type:"narration", text:"加州罕见的暴雨。\n你伞没带，临时跑进路口的 7-Eleven 躲雨。" },
+  { type:"narration", text:"店里只有一个收银员、一只睡着的猫、和几排冷藏柜。\n热柜里的关东煮在咕嘟咕嘟地冒泡。" },
+  { type:"narration", text:"你随手拿了瓶水准备结账——\n余光瞥见冷藏柜前蹲着一个人。" },
+  { type:"narration", text:"……黑色皮夹克。\n……白头发。" },
+  { type:"narration", text:"……" },
+
+  { type:"char", id:"jensen", expression:"surprised", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"surprised",
+    text:"……（抬头，也愣住了）" },
+  { type:"text", speaker:"你", text:"……黄总？" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（手里端着一盒泡面）\n……你怎么在这里。" },
+  { type:"text", speaker:"你", text:"我躲雨。\n您……" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……我也是。" },
+  { type:"text", speaker:"你", text:"（指着他手里的泡面）……您晚饭吃这个？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"……回家路上突然想吃。\n（默默把另一盒同款放回去）……不要告诉 Colette。" },
+
+  { type:"narration", text:"你忍不住笑了——\n这种被抓包的表情，跟一个普通人没区别。" },
+
+  { type:"choice", choices:[
+    { text:"「（拿过他手里的泡面，加了一袋鱼丸）一起。」", affection:13, flag:{key:"rainy_share",value:true} },
+    { text:"「我替您保密。」",                             affection:7  },
+    { text:"「您一个人来便利店，挺难得的。」",             affection:6  },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"shy", text:"……" },
+  { type:"narration", text:"你们站在便利店里，把一份泡面+鱼丸热好。\n外面的雨下得更大了。" },
+  { type:"narration", text:"店里没有座位，只有窗口一条窄长的台。\n你们并排站着，看雨水在马路上打出细小的水花。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"……这十天，对不起。" },
+  { type:"text", speaker:"你", text:"……您不需要道歉。" },
+  { type:"text", speaker:"黄仁勋", expression:"sad",
+    text:"我在想一件事。\n想得有点狠。" },
+  { type:"text", speaker:"你", text:"……什么事？" },
+  { type:"text", speaker:"黄仁勋", expression:"loving",
+    text:"想——\n如果我对一个人认真起来，我能不能给得起。\n这种问题，我已经很多年没有问过自己了。" },
+
+  { type:"narration", text:"……你的呼吸停了一拍。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……我没想到，会在便利店里讲这个。" },
+  { type:"text", speaker:"你", text:"……我也没想到。" },
+  { type:"narration", text:"你们沉默地把那盒泡面分着吃完。\n他递了筷子给你的时候，手指停在你掌心顶端，那么一秒钟。" },
+  { type:"flag", key:"rainy_711", value:true },
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……再过几天，等我想清楚——\n我会给你一个回答。" },
+  { type:"text", speaker:"你", text:"我等。" },
+
+  { type:"narration", text:"雨下得很大。\n你们各自打车走的时候，他叫的车先来。" },
+  { type:"narration", text:"他上车之前回头看了你一眼。\n那个眼神不像 CEO，不像导师，也不像朋友——\n是某种你说不出口、但全身都识别得到的东西。" },
+  { type:"narration", text:"——你一个人站在便利店门口，看着那辆车的尾灯消失在雨幕里。" },
+  { type:"narration", text:"等了七天，没等到一条消息。\n但今晚，你忽然觉得，那个回答其实已经写在他刚才的眼神里。" },
+
   /* —— 凌晨的消息 —— */
   { type:"narration", text:"凌晨两点四十一分，手机亮了。\n屏幕上只有六个字：" },
   { type:"narration", text:"「顶楼，有空吗？」" },
