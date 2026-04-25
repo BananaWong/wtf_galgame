@@ -292,6 +292,40 @@ chapter2_cafe: [
   { type:"text", speaker:"黄仁勋", expression:"shy", text:"……算了。喝咖啡，我帮你点了拿铁。" },
   { type:"narration", text:"他低头喝咖啡，耳根似乎有那么一点点红。\n你盯着他，心里有什么东西悄悄松动了。" },
 
+  /* —— 中段：你提到怎么知道这家咖啡馆 —— */
+  { type:"text", speaker:"你", text:"……您是怎么发现这家店的？" },
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"二十年前，公司差点倒的时候。\n我那时候每天都要找一个不会被人认出的地方喘口气。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"那时候老板还是现在这位老板的爸爸。\n他不知道我是谁，只知道我每次都点同一杯黑咖啡。" },
+  { type:"text", speaker:"你", text:"……（看了看他手里的杯子）\n您还在喝同一杯？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"——人会变，但有些东西不会。\n比如咖啡的浓度。" },
+
+  { type:"narration", text:"老板从吧台那边端来一小盘饼干，放在你们桌上。" },
+  { type:"text", speaker:"老板", text:"——黄先生，新朋友？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile", text:"……新同事。" },
+  { type:"text", speaker:"老板", text:"哦——「同事」啊。\n（眨眨眼，走开了）" },
+
+  { type:"text", speaker:"你", text:"（小声）……他笑得有点意味深长。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（咳了一下）\n……他每次都那样。" },
+  { type:"text", speaker:"你", text:"每次？" },
+  { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……（这话他不该接）" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……我意思是，他对每个人都那样。" },
+
+  { type:"choice", choices:[
+    { text:"「……我倒是觉得，他只对您带来的人那样。」", affection:11, flag:{key:"caught_him",value:true} },
+    { text:"「（笑笑，没追问）」",                       affection:7  },
+    { text:"「您带很多人来过这里？」",                   affection:4  },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（沉默几秒）\n……你不是「很多人」之一。" },
+  { type:"narration", text:"窗外的阳光忽然斜得正好，落在他放在桌上的手背上。\n你不动声色地把目光收回，端起拿铁喝了一口。\n——其实已经凉了，但你不想让自己说话的声音被发现在抖。" },
+
+  /* —— 转入 GTC demo 委托 —— */
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"对了，GTC 快到了。今年的 keynote 我想加一个新环节。\n你愿意帮我准备一个 live demo 吗？" },
   { type:"text", speaker:"你", text:"（一惊）我……来了才三周——" },
