@@ -233,6 +233,65 @@ chapter1: [
     text:"（轻笑）……我通常凌晨三点。\n不要学我。" },
   { type:"narration", text:"你起身告别。走廊里，你回头看了一眼——\n他还坐在窗边，望着台北夜景，手里握着那杯早已凉透的茶。" },
   { type:"narration", text:"那个背影，你很久很久之后还记得。" },
+  { type:"goto", target:"interlude_dm" },
+],
+
+/* ================================================================
+   过场：第一条 DM
+   ================================================================ */
+interlude_dm: [
+  { type:"scene", place:"主角住所 · 卧室", time:"凌晨 02:34", weather:"夜",
+    bg:"scene-cafe", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"入职第三天的凌晨。\n你失眠。\n躺在床上，把那次顶层办公室的对话在脑子里反复放。" },
+  { type:"narration", text:"……他读了你的论文四遍。\n……他柜子里 NV1 还在。\n……他凌晨三点才睡。" },
+  { type:"narration", text:"你越想越睡不着。" },
+  { type:"narration", text:"——叮。" },
+  { type:"narration", text:"Slack 通知。" },
+  { type:"narration", text:"内部 DM 群。" },
+  { type:"narration", text:"发件人：「Jensen H.」" },
+  { type:"narration", text:"……你坐起来了。" },
+
+  { type:"narration", text:"消息内容：" },
+  { type:"narration", text:"「Section 4.2 page 11，你提到那个 sparse mask kernel。\n如果把它改成 block-sparse，你估算的 throughput 是多少？」" },
+  { type:"narration", text:"……你扫了眼时间——凌晨 02:34。\n他人在出差路上。" },
+
+  { type:"choice", choices:[
+    { text:"「立刻拿出笔记本，认真回他。」",         affection:9, flag:{key:"replied_dm",value:true} },
+    { text:"「直接在手机上回——大约 1.7x。」",       affection:7  },
+    { text:"「明天早上再回，他这时候可能在睡。」", affection:3  },
+  ]},
+
+  { type:"narration", text:"——你抓起笔记本，把数据从头跑了一遍。\n半小时后，你回了一条：" },
+  { type:"narration", text:"「初步估算 1.7x，但 batch 64 之后会被显存带宽 cap 住。\n如果用 H100 的 TMA 异步加载，可能能拉到 2.1x。」" },
+  { type:"narration", text:"——发出去之后，你盯着屏幕看那个「正在输入」的圆点。" },
+  { type:"narration", text:"圆点亮起。\n再亮起。\n停了。" },
+  { type:"narration", text:"……你心想：他在打字。\n……他在删字。\n……他又在打字。" },
+  { type:"narration", text:"——三分钟后，他回了一句：" },
+  { type:"narration", text:"「不睡？」" },
+
+  { type:"choice", choices:[
+    { text:"「您也没睡。」",                         affection:9 },
+    { text:"「失眠。」",                             affection:7 },
+    { text:"「在等您回复。」",                       affection:11, flag:{key:"dm_bold",value:true} },
+  ]},
+
+  { type:"narration", text:"对面停了一下。" },
+  { type:"narration", text:"……「正在输入」的圆点又亮了起来。" },
+  { type:"narration", text:"……亮了一会儿。" },
+  { type:"narration", text:"……然后突然消失了。" },
+  { type:"narration", text:"——他没有回。" },
+
+  { type:"narration", text:"你盯着屏幕看了两分钟，确信他不会再回了。\n你长长呼出一口气，把手机放在枕边，盖上被子——\n但你心跳得比刚刚说话之前还快。" },
+
+  { type:"narration", text:"——叮。" },
+  { type:"narration", text:"凌晨 03:42。\n一条新消息：" },
+  { type:"narration", text:"「Block-sparse 的方案，你愿意写一个 prototype 吗？\n下周我回来看。」" },
+  { type:"narration", text:"……他绕过去了你刚才那句话。\n绕得很轻巧——但你能感觉到，他迟迟没回那两分钟，并不是因为没看见。" },
+  { type:"flag", key:"first_dm", value:true },
+
+  { type:"text", speaker:"你", text:"……（小声）\n……老黄，您也太狡猾了。" },
+  { type:"narration", text:"你笑着回了一句「行，给我四天」。\n窗外的夜很安静。\n你睡过去的时候，嘴角还是上扬的。" },
   { type:"goto", target:"chapter2_cafe" },
 ],
 
