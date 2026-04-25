@@ -1198,8 +1198,8 @@ interlude_flight: [
   { type:"scene", place:"旧金山机场 · 国际航站楼", time:"清晨 06:40", weather:"薄雾",
     bg:"scene-lobby", mood:"calm", clearChars:true },
 
-  { type:"narration", text:"凌晨四点的闹钟。\n登机口的咖啡机。\n你比他早到十分钟，攥着登机牌，等着。" },
-  { type:"narration", text:"远远看见那件皮夹克——他来了，背着一个旧的双肩包。\n双肩包。不是公文包。" },
+  { type:"narration", text:"凌晨四点起床。\n登机口的咖啡机。\n你比他早到十分钟，攥着登机牌等。" },
+  { type:"narration", text:"远远看见那件皮夹克——\n他来了，背着一个旧双肩包。\n双肩包。不是公文包。" },
   { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"早。睡了吗？" },
@@ -1210,7 +1210,7 @@ interlude_flight: [
   { type:"scene", place:"NH-007 班机 · 商务舱", time:"上午 09:25", weather:"高空",
     bg:"scene-rooftop", mood:"calm" },
   { type:"narration", text:"波音 777，商务舱第一排。\n他靠走道，你靠窗。" },
-  { type:"narration", text:"飞机刚起飞十五分钟，他已经把笔记本电脑打开了。\n屏幕上是一份英文文档，字小到你看不清楚。" },
+  { type:"narration", text:"刚起飞十五分钟，他笔记本就打开了。\n屏幕上一份英文文档，字小到你看不清。" },
 
   { type:"text", speaker:"你", text:"……您在看什么？" },
   { type:"text", speaker:"黄仁勋", expression:"thinking",
@@ -1220,7 +1220,7 @@ interlude_flight: [
     text:"我从来不提前写完。\n讲的过程才是写的过程。" },
   { type:"text", speaker:"你", text:"……（这就是 keynote 王者吗）" },
 
-  { type:"narration", text:"空乘走过来送早餐。他点了煎蛋，你点了粥。\n他把自己的小面包放到你的托盘上。" },
+  { type:"narration", text:"空乘送早餐过来。\n他点了煎蛋，你点了粥。\n他把自己那份小面包，挪到你的托盘上。" },
   { type:"text", speaker:"你", text:"……？" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"我不爱吃面包。\n你早上没吃东西。" },
@@ -1228,8 +1228,8 @@ interlude_flight: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"客气什么。我们吃过烧饼油条的。" },
 
-  { type:"narration", text:"他低头继续工作。你看着窗外的云海，心里有种奇怪的安稳。" },
-  { type:"narration", text:"中途他去了一趟洗手间，你才发现——他的笔记本屏幕上有一行小注释：" },
+  { type:"narration", text:"他低头接着工作。\n你看着窗外的云海。\n心里有种说不清的安稳。" },
+  { type:"narration", text:"中途他去了一趟洗手间。\n你低头瞥到他笔记本上一行小字注释：" },
   { type:"narration", text:"「记得给 X 留时间——别把所有 break 都讲满了。」" },
   { type:"narration", text:"X 是你的名字缩写。" },
   { type:"narration", text:"……他在为你留时间。" },
@@ -1251,19 +1251,20 @@ interlude_flight: [
     text:"（耳根又红了）\n……睡觉。再四个小时落地。" },
   { type:"narration", text:"他放下椅背，闭上眼睛。\n二十分钟后，他真的睡着了。" },
 
-  { type:"narration", text:"你侧过头看他——\n没有 keynote 时的气场，没有发布会时的笑容。\n只有一个安静睡着的、有点疲惫的中年男人。" },
+  { type:"narration", text:"你侧头看他——\n没有 keynote 时的气场，没有发布会上的笑容。\n只有一个睡着的、有点疲惫的中年男人。" },
   { type:"narration", text:"你看了很久，久到自己都觉得不好意思。" },
-  { type:"narration", text:"飞机引擎的低鸣。\n窗外是一片白茫茫的云。\n你忽然明白了 Colette 那句话——\n「他这一次，没有把自己留在台上。」" },
+  { type:"narration", text:"飞机引擎的低鸣。\n窗外白茫茫的云。\n你忽然听懂了 Colette 那句话——" },
+  { type:"narration", text:"「他这一次，没有把自己留在台上。」" },
 
-  { type:"narration", text:"成田机场到了。\n你伸手轻轻碰了碰他的肩膀。" },
+  { type:"narration", text:"成田机场到了。\n你轻轻碰了一下他的肩。" },
   { type:"text", speaker:"你", text:"……Jensen，到了。" },
   { type:"text", speaker:"黄仁勋", expression:"surprised",
-    text:"（一下就醒了）……嗯。\n（看了你一眼，又恍惚了一秒）……刚才——" },
+    text:"（一下就醒了）……嗯。\n（看了你一眼，恍惚了一秒）……刚才——" },
   { type:"text", speaker:"你", text:"嗯？" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"……没事。下飞机吧。" },
-  { type:"narration", text:"你不知道他原本想说什么。\n但你猜，应该是不重要的事。" },
-  { type:"narration", text:"——也或许，是非常重要的事。" },
+  { type:"narration", text:"你不知道他本来想说什么。\n你猜——应该不重要。" },
+  { type:"narration", text:"——也或许，重要得他没想好怎么说。" },
   { type:"goto", target:"chapter6_tokyo" },
 ],
 
@@ -1275,8 +1276,8 @@ chapter6_tokyo: [
     bg:"scene-rooftop", mood:"romantic", clearChars:true },
   { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
 
-  { type:"narration", text:"GTC 后三周，他真的带你来了东京。\n名义上是出席一场 AI 峰会，但他把你的名字加在了随行名单上。" },
-  { type:"narration", text:"酒店大堂里，雨声从旋转门缝里渗进来，带着秋天的湿意。" },
+  { type:"narration", text:"GTC 后三周。\n他真的带你来了东京。\n名义上是 AI 峰会——你的名字被加在了随行名单上。" },
+  { type:"narration", text:"酒店大堂里，旋转门转动的间隙里飘进雨声。\n秋天的潮味。" },
 
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"（看了看外面的雨）你带伞了吗？" },
@@ -1311,15 +1312,15 @@ chapter6_tokyo: [
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"这里是我心里的「圣地」。\n你之前不是问过我，1997 年来日本买的那个 PSP 在哪儿——我带你去看那家店。" },
 
-  { type:"narration", text:"巷子很窄，两边都是密密麻麻的电子配件店和模型店。\n二楼以上的招牌一个叠着一个，像一本立体的电子杂志。" },
-  { type:"narration", text:"他在一家很旧的小店门口停了下来。\n店招牌上的字已经掉了一半，玻璃门上贴着泛黄的「FAMICOM」海报。" },
+  { type:"narration", text:"巷子很窄。\n两边密密麻麻的电子配件店和模型店。\n二楼以上的招牌一个叠一个。" },
+  { type:"narration", text:"他在一家很旧的小店门口停下。\n招牌的字掉了一半。\n玻璃门上贴着发黄的「FAMICOM」海报。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"——就是这家。\n二十七年了，店还在。" },
   { type:"text", speaker:"你", text:"老板还认得您吗？" },
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"当年我太狼狈了，他大概早忘了。" },
 
-  { type:"narration", text:"店里只有一个老爷爷在柜台后面打瞌睡。\n货架上零件密密麻麻，从初代 GameBoy 主板到 90 年代的显卡都有。" },
+  { type:"narration", text:"店里只有一个老爷爷，在柜台后面打瞌睡。\n货架上零件堆得满满——从初代 GameBoy 主板到 90 年代的显卡。" },
 
   { type:"text", speaker:"老板", text:"いらっしゃい——\n（看了一眼，又看了第二眼）……あれ？" },
   { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……" },
@@ -1328,7 +1329,7 @@ chapter6_tokyo: [
     text:"……（愣住，然后大笑）\n是我。是我。" },
   { type:"text", speaker:"老板", text:"那台机器，你拆完，写信寄回来给我说哪里设计得不好。\n我留了二十七年，等你来取——" },
 
-  { type:"narration", text:"老板从柜台底下拿出一个旧木盒。\n打开——\n里面是一台已经发黄的 PSP，旁边夹着一封信。" },
+  { type:"narration", text:"老板从柜台底下拿出一个旧木盒。\n打开——\n里面是一台发黄的 PSP，旁边夹着一封信。" },
 
   { type:"choice", choices:[
     { text:"「……您还真写过信？」",                       affection:7 },
@@ -1338,17 +1339,18 @@ chapter6_tokyo: [
 
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……（接过盒子，手指微微发抖）\n谢谢。" },
-  { type:"narration", text:"他没有当场打开信封，只是把整个木盒小心地放进双肩包里。\n出门的时候，雨已经停了。\n秋日下午的阳光落在窄巷尽头，像一条狭长的金色河。" },
+  { type:"narration", text:"他没当场打开信。\n只是把整个木盒，小心地放进双肩包。" },
+  { type:"narration", text:"出门时雨已经停了。\n秋日的阳光从窄巷尽头斜进来，照得脚下一截发亮。" },
 
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"……我从来没跟人讲过这件事。" },
   { type:"text", speaker:"你", text:"现在讲了。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"……是啊。" },
-  { type:"narration", text:"他没有看你，但他下意识地，把双肩包的肩带往你这边换了一下。\n两个人并肩走，肩膀偶尔会撞到。" },
+  { type:"narration", text:"他没有看你。\n但他下意识地把双肩包的肩带换到了靠你这边。\n两个人并肩走着——肩膀偶尔撞一下。" },
   { type:"flag", key:"tokyo_psp", value:true },
 
-  { type:"narration", text:"傍晚时分，你们去了一家不起眼的家庭式拉面店吃饭。\n他点了酱油味噌，你点了豚骨。\n他偷偷把自己的卤蛋放到你碗里，被你抓包。" },
+  { type:"narration", text:"傍晚你们找了家不起眼的家庭式拉面店。\n他点了酱油味噌，你点了豚骨。\n他偷偷把自己那颗卤蛋夹到你碗里——被你逮个正着。" },
   { type:"text", speaker:"你", text:"……您又来。" },
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"……（默默把卤蛋切了一半，自己留一半）" },
@@ -1356,23 +1358,25 @@ chapter6_tokyo: [
 
   { type:"scene", place:"东京 · 隐居酒屋「雨屋」", time:"深夜 22:10", weather:"雨",
     bg:"scene-rooftop", mood:"romantic" },
-  { type:"narration", text:"酒屋很小，只有六张桌子，雨打在木格窗上，声音细碎而持续。\n你们坐在靠里的角落，各自点了一杯。" },
+  { type:"narration", text:"酒屋很小，六张桌子。\n雨打在木格窗上——细细的，但不停。\n你们坐在最里面那张角落桌，各点了一杯。" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
     text:"（看着酒杯）……你知道我第一次来日本是什么时候吗？" },
   { type:"text", speaker:"你", text:"什么时候？" },
   { type:"text", speaker:"黄仁勋", expression:"sad",
-    text:"1997 年。公司快撑不住了，我飞过来找投资，被十八家公司拒绝了。\n最后一天，我一个人在秋叶原逛到晚上十点，买了个 PSP 回去。" },
-  { type:"text", speaker:"你", text:"（没忍住）……PSP？" },
+    text:"1997 年。\n公司快撑不下去了，我飞过来找投资。\n那一周——被十八家公司拒了。" },
+  { type:"text", speaker:"黄仁勋", expression:"sad",
+    text:"最后一天，我一个人在秋叶原逛到晚上十点。\n买了一台 PSP 回去。" },
+  { type:"text", speaker:"你", text:"……PSP？" },
   { type:"text", speaker:"黄仁勋", expression:"laugh",
-    text:"嗯。然后在飞机上拆开来研究里面的芯片。\n被旁边的人投诉了说我占用扶手。" },
-  { type:"narration", text:"你笑得把酒呛出来了。\n他递给你纸巾，眼睛里带着一点点得逞的笑意。" },
+    text:"嗯。\n然后在飞机上拆开来看里面的芯片。\n被旁边的乘客投诉，说我占用扶手。" },
+  { type:"narration", text:"你笑得把酒呛了出来。\n他递纸巾过来——眼神里有一点点得逞的笑。" },
 
   { type:"text", speaker:"你", text:"（擦嘴）……您这人，比采访里有意思多了。" },
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"（静静看着你）\n……你也是。" },
 
-  { type:"narration", text:"雨声把酒屋里的一切都调成了慢速。\n他说这话的时候，眼神没有移开。" },
+  { type:"narration", text:"屋外的雨声把整间酒屋调成了慢速。\n他说完这句话——目光没移开。" },
 
   { type:"choice", choices:[
     { text:"「（对视，没移开眼神）」",                       affection:16, flag:{key:"tokyo_gaze",value:true} },
