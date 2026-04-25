@@ -1150,6 +1150,40 @@ chapter6_tokyo: [
    第七章：屋顶的星空
    ================================================================ */
 chapter7_rooftop: [
+  /* —— 屋顶之前的十天 —— */
+  { type:"scene", place:"NVIDIA 总部 · 你的工位", time:"傍晚 18:40", weather:"晴",
+    bg:"scene-lobby", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"东京回来后，他消失了一段时间。\n出席了三场峰会，飞了六个城市，没有主动联系你。" },
+  { type:"narration", text:"你告诉自己：他是 CEO，他有一万件事要做。\n你告诉自己：那个雨夜只是气氛烘托。\n你告诉自己：……不要动摇。" },
+  { type:"narration", text:"但你每天检查手机的次数，比你 commit 的次数还多。" },
+
+  { type:"text", speaker:"你", text:"（盯着屏幕，第三次输错密码）……" },
+  { type:"text", speaker:"你", text:"（深呼吸）专注。\n他没消息，是因为他忙。\n你不要乱想。" },
+
+  { type:"narration", text:"——但你确实在乱想。" },
+
+  /* —— Colette 路过 —— */
+  { type:"char", id:"colette", expression:"warm", slot:"right", placeholder:true },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"……你又在等他消息？" },
+  { type:"text", speaker:"你", text:"……（被抓包）我没有。" },
+  { type:"text", speaker:"Colette", expression:"smile",
+    text:"他从来都是这样。一旦想清楚一件事，他会先消失，然后回来给你一击。" },
+  { type:"text", speaker:"你", text:"……一击？" },
+  { type:"text", speaker:"Colette", expression:"warm",
+    text:"……做好心理准备。\n（顿了顿）也做好幸福的准备。" },
+  { type:"char", id:"colette", hide:true, slot:"right" },
+
+  { type:"narration", text:"那天晚上，你回家躺在床上，盯着天花板。\n手机静静地放在枕边。" },
+  { type:"narration", text:"你不知道自己在等什么。但你知道，你在等。" },
+
+  /* —— 凌晨的消息 —— */
+  { type:"narration", text:"凌晨两点四十一分，手机亮了。\n屏幕上只有六个字：" },
+  { type:"narration", text:"「顶楼，有空吗？」" },
+  { type:"narration", text:"你盯着这条消息看了三十秒。\n然后从床上坐起来，开始穿衣服。" },
+
+  /* —— 屋顶 —— */
   { type:"scene", place:"NVIDIA 总部 · 隐藏天台", time:"深夜 23:15", weather:"繁星",
     bg:"scene-rooftop", mood:"romantic", clearChars:true },
   { type:"char", id:"jensen", expression:"thinking", pose:"leaning", slot:"center", placeholder:true },
