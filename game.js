@@ -1253,6 +1253,23 @@ chapter7_rooftop: [
    第八章：告白
    ================================================================ */
 chapter8_confession: [
+  /* —— 台北 · 出差最后一夜的铺垫 —— */
+  { type:"scene", place:"台北 · 总部楼下", time:"深夜 23:32", weather:"晴",
+    bg:"scene-office-night", mood:"romantic", clearChars:true },
+
+  { type:"narration", text:"台北。\n你们在这里出差，已经第五天。" },
+  { type:"narration", text:"明天就要飞回加州。\n他白天的会议都结束了，没让你跟最后一场——\n说是「你早点去吃个饭，今晚要单独跟你聊几句。」" },
+  { type:"narration", text:"你站在总部楼下，仰头看那栋透着绿色 logo 的高楼。\n夜风温柔，吹得人想做一些不切实际的事情。" },
+
+  { type:"text", speaker:"你", text:"（心跳）……他要说什么？" },
+  { type:"narration", text:"你想起这五个月发生的事——" },
+  { type:"narration", text:"大厅初遇。\n深夜的乌龙茶。\n咖啡馆的拿铁。\n董事会的二十二分钟。\nGTC 凌晨的 kernel panic。\n永和阿嬷的烧饼油条。\n秋叶原小巷里的 PSP。\n屋顶上那个望远镜……" },
+  { type:"narration", text:"——五个月。\n说短，确实短。\n说长，每一帧你都记得。" },
+
+  { type:"narration", text:"你深深吸了一口台北的夜风，按下电梯。\n42 层。" },
+  { type:"narration", text:"——叮。" },
+
+  /* —— 顶层办公室 —— */
   { type:"scene", place:"NVIDIA 总部顶层办公室", time:"深夜 11:47", weather:"晴朗",
     bg:"scene-confession", mood:"romantic", clearChars:true },
   { type:"char", id:"jensen", expression:"loving", pose:"hand_chin", slot:"center", placeholder:true },
@@ -1260,6 +1277,16 @@ chapter8_confession: [
   { type:"narration", text:"台北，深秋。\n从你入职算起，整整五个月。" },
   { type:"narration", text:"外面是 101 大楼的灯火，房间里是你们最熟悉的安静。" },
   { type:"narration", text:"但今晚，这间屋子里有什么不一样的东西在流动。" },
+
+  { type:"narration", text:"——他没坐在桌子后面。\n他站在窗边，背对着你，手里端着一杯没动过的茶。" },
+  { type:"text", speaker:"你", text:"……Jensen？" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（缓缓转过身）\n来了。" },
+  { type:"narration", text:"你忽然发现——\n他今天没有穿那件皮夹克。" },
+  { type:"narration", text:"……穿的是一件你从来没见过的、深灰色的薄毛衣。" },
+  { type:"text", speaker:"你", text:"（心脏狂跳）……" },
+  { type:"narration", text:"——你想起了 Colette 那句话：\n「那个皮夹克——如果哪天他在你面前脱掉，那才是真的。」" },
+  { type:"flag", key:"jacket_off", value:true },
 
   { type:"text", speaker:"黄仁勋", expression:"loving",
     text:"这一路走来，真的很感谢有你在我身边。" },
