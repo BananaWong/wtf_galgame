@@ -1232,6 +1232,79 @@ chapter6_tokyo: [
     text:"（很轻，像是自言自语）\n……你让我很难，你知道吗。" },
   { type:"narration", text:"雨还在下。\n你们各自端着酒杯，谁都没有先开口。\n但房间里有什么东西，悄悄改变了形状。" },
   { type:"flag", key:"tokyo_night", value:true },
+  { type:"goto", target:"interlude_ryan" },
+],
+
+/* ================================================================
+   过场：旧友 Ryan 来访
+   ================================================================ */
+interlude_ryan: [
+  { type:"scene", place:"旧金山 · 渔人码头某酒馆", time:"傍晚 19:20", weather:"晴",
+    bg:"scene-cafe", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"东京回来后第三天。\n大学同窗 Ryan 给你发消息——他来旧金山出差，问你今晚有没有空喝一杯。" },
+  { type:"narration", text:"你已经一年多没见他了。\n上次见，是他刚跳槽到湾区一家做 LLM infra 的中型公司。" },
+
+  { type:"narration", text:"——酒馆里。\n他比你先到，已经开了一瓶 IPA。" },
+  { type:"text", speaker:"Ryan", text:"哟——稀有动物现身了。\n一年没见，发福了。" },
+  { type:"text", speaker:"你", text:"……你才发福。" },
+  { type:"text", speaker:"Ryan", text:"我承认。\n（敬了一下杯）NVIDIA 怎么样？听说你打了一手 GTC 漂亮的 demo。" },
+
+  { type:"text", speaker:"你", text:"……还行。" },
+  { type:"text", speaker:"Ryan", text:"行了行了，朋友圈我都点了赞。\n（喝了一口，看着你）……不过你今天不太对劲。" },
+  { type:"text", speaker:"你", text:"……什么？" },
+  { type:"text", speaker:"Ryan", text:"你眼神。\n以前你聊 paper 的时候眼睛是亮的。\n今天你听我提 paper，反应慢半拍。" },
+
+  { type:"narration", text:"……你忍不住低头喝了一口酒。" },
+  { type:"text", speaker:"Ryan", text:"——是工作太累，还是……" },
+  { type:"text", speaker:"Ryan", text:"……唉，不会吧。\n你别告诉我，你又栽在哪个公司里的人身上了。" },
+
+  { type:"text", speaker:"你", text:"……（沉默）" },
+  { type:"text", speaker:"Ryan", text:"……" },
+  { type:"text", speaker:"Ryan", text:"是谁啊？说说看。" },
+
+  { type:"choice", choices:[
+    { text:"「不能说。保密协议。」",                     affection:0  },
+    { text:"「……一个比我大很多的人。」",                 affection:0, flag:{key:"told_ryan",value:true} },
+    { text:"「就是你猜不到的那个人。」",                 affection:0, flag:{key:"told_ryan",value:true} },
+  ]},
+
+  { type:"text", speaker:"Ryan", text:"……比你大很多？" },
+  { type:"text", speaker:"Ryan", text:"……NVIDIA 里比你大很多的——\n（停下，盯着你）……不会吧。" },
+  { type:"text", speaker:"你", text:"（红了脸）……不要乱猜。" },
+  { type:"text", speaker:"Ryan", text:"……（看了你三秒）……你没乱猜也乱不到这里。" },
+
+  { type:"narration", text:"Ryan 沉默了一会儿，把杯子放下。\n他这个人平时嘴贱，但真正认真的时候，眼睛会变得很稳。" },
+
+  { type:"text", speaker:"Ryan", text:"……我不评判。\n他这个人，就算抛开 CEO 那一层，单看为人，确实——很 NVIDIA。" },
+  { type:"text", speaker:"你", text:"……什么意思？" },
+  { type:"text", speaker:"Ryan", text:"很硬核。\n硬核到你想跟他比拼一辈子，那种。" },
+
+  { type:"narration", text:"你笑了一下。\n这是你第一次在朋友面前承认这件事，没那么尴尬。\n——反而像是把心里某根紧绷了好久的弦，松开了一格。" },
+
+  { type:"text", speaker:"Ryan", text:"我就一个建议——\n你想清楚自己要的是什么。" },
+  { type:"text", speaker:"Ryan", text:"是想跟他工作十年，还是想跟他活十年。\n这两个不冲突，但侧重点不一样。" },
+
+  { type:"choice", choices:[
+    { text:"「……我都想要。」",                       affection:8, flag:{key:"want_both",value:true} },
+    { text:"「我想跟他活十年。」",                   affection:13, flag:{key:"want_life",value:true} },
+    { text:"「能跟他工作十年我就满足。」",           affection:5  },
+  ]},
+
+  { type:"text", speaker:"Ryan", text:"……（笑了）你想清楚了。\n那我就放心了。" },
+  { type:"text", speaker:"Ryan", text:"对了——\nApex 那边前几天又问起你了。\n一个叫 Marcus 的家伙托我打听打听——你好像把他得罪了？" },
+  { type:"text", speaker:"你", text:"……他自己来挖过我，被我拒了。" },
+  { type:"text", speaker:"Ryan", text:"……行吧。\n（顿了顿）——那我帮你回他：\n这位仁兄已经把自己许给老 NVIDIA 了，别打扰。" },
+
+  { type:"text", speaker:"你", text:"……Ryan，谢谢。" },
+  { type:"text", speaker:"Ryan", text:"客气什么。\n你高兴就行。\n不过——" },
+  { type:"text", speaker:"Ryan", text:"……如果哪天他对不起你——\n你回头找我喝酒，我陪你骂他到天亮。" },
+  { type:"text", speaker:"你", text:"……（笑）……希望用不上。" },
+  { type:"text", speaker:"Ryan", text:"嗯。我也希望用不上。" },
+
+  { type:"narration", text:"那天晚上你回家，走在码头边的木板路上。\n海风很大，但你不冷。" },
+  { type:"narration", text:"——把这件事说出来，原来是这种感觉。\n你松了一口气，心里也明白了一点：" },
+  { type:"narration", text:"……你不只是在喜欢一个 CEO。\n你是在喜欢——一个普通人。\n一个会蹲在 7-Eleven 冷藏柜前犹豫泡面、深夜亲手帮你修 bug、被打开抽屉就有塑料叉子的，普通人。" },
   { type:"goto", target:"chapter7_rooftop" },
 ],
 
