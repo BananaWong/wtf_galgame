@@ -627,6 +627,82 @@ chapter5_gtc_keynote: [
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"（顿了一下）\n……嗯。" },
   { type:"narration", text:"那一刻，你们都没再说话。\n城市的灯光在远处静静燃烧，和你胸口的温度，差不多。" },
+  { type:"goto", target:"interlude_flight" },
+],
+
+/* ================================================================
+   过场：去东京的航班
+   ================================================================ */
+interlude_flight: [
+  { type:"scene", place:"旧金山机场 · 国际航站楼", time:"清晨 06:40", weather:"薄雾",
+    bg:"scene-lobby", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"凌晨四点的闹钟。\n登机口的咖啡机。\n你比他早到十分钟，攥着登机牌，等着。" },
+  { type:"narration", text:"远远看见那件皮夹克——他来了，背着一个旧的双肩包。\n双肩包。不是公文包。" },
+  { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"早。睡了吗？" },
+  { type:"text", speaker:"你", text:"……没有。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"那我们俩一样。\n上去补觉。" },
+
+  { type:"scene", place:"NH-007 班机 · 商务舱", time:"上午 09:25", weather:"高空",
+    bg:"scene-rooftop", mood:"calm" },
+  { type:"narration", text:"波音 777，商务舱第一排。\n他靠走道，你靠窗。" },
+  { type:"narration", text:"飞机刚起飞十五分钟，他已经把笔记本电脑打开了。\n屏幕上是一份英文文档，字小到你看不清楚。" },
+
+  { type:"text", speaker:"你", text:"……您在看什么？" },
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"日本市场策略。\n这次峰会上有个发言，三十分钟。" },
+  { type:"text", speaker:"你", text:"还没写完？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"我从来不提前写完。\n讲的过程才是写的过程。" },
+  { type:"text", speaker:"你", text:"……（这就是 keynote 王者吗）" },
+
+  { type:"narration", text:"空乘走过来送早餐。他点了煎蛋，你点了粥。\n他把自己的小面包放到你的托盘上。" },
+  { type:"text", speaker:"你", text:"……？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"我不爱吃面包。\n你早上没吃东西。" },
+  { type:"text", speaker:"你", text:"（小声）……谢谢。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"客气什么。我们吃过烧饼油条的。" },
+
+  { type:"narration", text:"他低头继续工作。你看着窗外的云海，心里有种奇怪的安稳。" },
+  { type:"narration", text:"中途他去了一趟洗手间，你才发现——他的笔记本屏幕上有一行小注释：" },
+  { type:"narration", text:"「记得给 X 留时间——别把所有 break 都讲满了。」" },
+  { type:"narration", text:"X 是你的名字缩写。" },
+  { type:"narration", text:"……他在为你留时间。" },
+  { type:"flag", key:"flight_note", value:true },
+
+  { type:"narration", text:"他回来的时候，看见你正盯着屏幕发呆。" },
+  { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（默默把笔记本合上）\n……你不该看的。" },
+
+  { type:"choice", choices:[
+    { text:"「我没看见。」",                       affection:5 },
+    { text:"「……谢谢您。」",                     affection:11 },
+    { text:"「以后您 break 也别讲满，我陪您坐着。」", affection:14, flag:{key:"flight_promise",value:true} },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"loving", text:"……" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（耳根又红了）\n……睡觉。再四个小时落地。" },
+  { type:"narration", text:"他放下椅背，闭上眼睛。\n二十分钟后，他真的睡着了。" },
+
+  { type:"narration", text:"你侧过头看他——\n没有 keynote 时的气场，没有发布会时的笑容。\n只有一个安静睡着的、有点疲惫的中年男人。" },
+  { type:"narration", text:"你看了很久，久到自己都觉得不好意思。" },
+  { type:"narration", text:"飞机引擎的低鸣。\n窗外是一片白茫茫的云。\n你忽然明白了 Colette 那句话——\n「他这一次，没有把自己留在台上。」" },
+
+  { type:"narration", text:"成田机场到了。\n你伸手轻轻碰了碰他的肩膀。" },
+  { type:"text", speaker:"你", text:"……Jensen，到了。" },
+  { type:"text", speaker:"黄仁勋", expression:"surprised",
+    text:"（一下就醒了）……嗯。\n（看了你一眼，又恍惚了一秒）……刚才——" },
+  { type:"text", speaker:"你", text:"嗯？" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……没事。下飞机吧。" },
+  { type:"narration", text:"你不知道他原本想说什么。\n但你猜，应该是不重要的事。" },
+  { type:"narration", text:"——也或许，是非常重要的事。" },
   { type:"goto", target:"chapter6_tokyo" },
 ],
 
