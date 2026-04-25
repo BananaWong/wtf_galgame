@@ -126,13 +126,13 @@ chapter1: [
     bg:"scene-office-night", mood:"calm", clearChars:true },
   { type:"char", id:"jensen", expression:"thinking", pose:"hand_chin", slot:"center", placeholder:true },
 
-  { type:"narration", text:"台北 101 的灯光在落地窗外闪烁。\n整栋楼几乎只剩这一间屋子还亮着。" },
+  { type:"narration", text:"台北 101 的灯光在落地窗外一闪一闪。\n整栋楼好像只剩这一间还亮着。" },
   { type:"text", speaker:"黄仁勋", expression:"thinking",
-    text:"来了。坐。\n（指着对面的椅子）咖啡还是茶？" },
+    text:"来了。坐。\n咖啡还是茶？" },
   { type:"text", speaker:"你", text:"……茶就好。谢谢。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
-    text:"（亲手倒了一杯乌龙）这是台湾高山茶，我每次回来都会带一点。" },
-  { type:"narration", text:"你接过茶杯，掌心感受到一阵温热。" },
+    text:"（自己倒了一杯乌龙）台湾高山茶。\n我每次回来都带一点。" },
+  { type:"narration", text:"杯子有点烫手。" },
 
   /* —— 进入正题前的小铺垫 —— */
   { type:"narration", text:"办公室里没有多余的家具。\n一张大书桌，一张沙发，一个旧式的台灯。\n靠墙立着一个玻璃柜，里面整整齐齐摆着一排芯片——每一颗下面都有标签。" },
@@ -150,17 +150,17 @@ chapter1: [
   ]},
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
-    text:"（轻声）每天。\n它提醒我——这家公司从来没有保险过。" },
-  { type:"narration", text:"他说这话的时候，目光从玻璃柜上慢慢移回到你身上。\n你忽然觉得，那一柜子芯片不是奖杯——更像是某种私人的供品。" },
+    text:"（声音很轻）每天。\n它提醒我——这家公司从来没保险过。" },
+  { type:"narration", text:"他的目光从玻璃柜慢慢移回你身上。\n那一柜子芯片，看起来不像奖杯，更像他自己留给自己的提醒。" },
 
   { type:"text", speaker:"黄仁勋", expression:"serious",
     text:"我想问你一个问题。不是技术问题。" },
   { type:"text", speaker:"你", text:"请说。" },
   { type:"text", speaker:"黄仁勋", expression:"thinking", pose:"hand_chin",
-    text:"如果你知道一件事十年后一定会发生——\n但在那之前，你要用十年承受所有人的质疑、嘲笑，甚至自我怀疑——\n你会怎么做？" },
+    text:"假设你知道一件事十年后一定会发生。\n但在那之前——你要扛十年的质疑，十年的嘲笑，十年的自我怀疑。\n你做不做？" },
 
-  { type:"narration", text:"这个问题太重了，重得你短暂地失语。" },
-  { type:"narration", text:"窗外，台北的灯光一闪一灭，像芯片上数以亿计的晶体管，安静地跳动。" },
+  { type:"narration", text:"……你一时不知道怎么答。" },
+  { type:"narration", text:"窗外的台北，安静得像在等你开口。" },
 
   { type:"choice", choices:[
     { text:"「我会做。哪怕只有 1% 的人相信我。」", affection:10 },
@@ -169,15 +169,15 @@ chapter1: [
   ]},
 
   { type:"text", speaker:"黄仁勋", expression:"sad",
-    text:"1993 年，NVIDIA 刚成立那会儿，我们做的第一款芯片，彻底失败了。" },
+    text:"1993 年。NVIDIA 刚开张那会儿。\n我们做的第一款芯片，砸了。" },
   { type:"text", speaker:"黄仁勋", expression:"sad",
-    text:"我告诉所有员工：我们的钱只够再撑几个月了。\n有人哭了，有人第二天就走了。\n我去了附近一家 Denny's，坐了很久。" },
+    text:"我跟所有员工说——钱只够再撑几个月。\n有人哭，有人第二天就走了。\n我没回家，去了路口一家 Denny's，坐了很久。" },
   { type:"text", speaker:"你", text:"……Denny's？" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
-    text:"二十四小时营业，没人赶你走。\n那一晚，我坐在那里，点了份薯条，想了整整五个小时。\n然后我想通了——失败不是终点，是入场费。" },
+    text:"二十四小时营业，没人赶。\n我点了份薯条，坐了五个小时。\n出来的时候我想通了一件事——\n失败不是终点，是入场费。" },
   { type:"flag", key:"dennys", value:true },
 
-  { type:"narration", text:"他说这话的时候平静得出奇，像是在讲别人的故事。\n但你感觉到，那五个小时是真的很沉的五个小时。" },
+  { type:"narration", text:"他说得平静，像在讲别人的事。\n你听得不平静。" },
 
   /* —— 中段：谈论文 —— */
   { type:"text", speaker:"黄仁勋", expression:"serious",
@@ -185,12 +185,12 @@ chapter1: [
   { type:"text", speaker:"你", text:"……我明白。" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
     text:"好。那我们谈正事。" },
-  { type:"narration", text:"他从抽屉里拿出一摞打印纸，啪的一声放在桌上。\n是你的论文。\n所有边角都被他用绿色荧光笔标过，写满了批注。" },
-  { type:"text", speaker:"你", text:"（傻眼）……这是？" },
+  { type:"narration", text:"他从抽屉里抽出一摞纸，啪一声放在桌上。\n你的论文。每一页都被绿色荧光笔标得满满的。" },
+  { type:"text", speaker:"你", text:"……这是？" },
   { type:"text", speaker:"黄仁勋", expression:"laugh",
-    text:"我打印了三份。一份给我自己，一份给研究院的 Bill，一份——" },
+    text:"我打了三份。\n一份我自己留着，一份给研究院的 Bill。\n这一份——" },
   { type:"text", speaker:"黄仁勋", expression:"smile",
-    text:"留给你今晚带回去看。\n你会发现你自己的某些假设，其实还可以再大胆一倍。" },
+    text:"今晚带回去看。\n你自己的几个假设，其实还可以再大胆一倍。" },
   { type:"text", speaker:"你", text:"（接过来，发现某一页贴了一张便利贴：「这一段假设保守了。问 X。」）" },
   { type:"text", speaker:"你", text:"……X 是我吗？" },
   { type:"text", speaker:"黄仁勋", expression:"shy",
@@ -205,9 +205,10 @@ chapter1: [
   { type:"text", speaker:"黄仁勋", expression:"laugh",
     text:"两倍可能太激进。\n（笑）但我喜欢这个态度。" },
 
-  { type:"narration", text:"接下来三个小时，你们谈了架构、谈了 CUDA 的未来、谈了 AI 的边界。\n他思考的速度，比你想象的快得多。但他从来不抢答——他听。" },
-  { type:"narration", text:"中途你提到一个新出的开源框架。\n他「嗯」了一声，从旁边一个文件夹里翻出了那篇论文的预印本——\n上面也是密密麻麻的批注。" },
-  { type:"text", speaker:"你", text:"（心想：他比我读得还快……）" },
+  { type:"narration", text:"接下来三个小时——\n架构。CUDA 的下一步。AI 的边界。" },
+  { type:"narration", text:"他想得比你快得多。\n但他不抢话——他听。" },
+  { type:"narration", text:"中途你提到一个刚出的开源框架。\n他「嗯」了一声，从旁边的文件夹里翻出来那篇预印本——上面也写满了批注。" },
+  { type:"text", speaker:"你", text:"（……他比我读得还快。）" },
 
   { type:"text", speaker:"黄仁勋", expression:"thinking",
     text:"做这一行，看论文不是任务，是呼吸。\n你不读，下个月就跟不上了。" },
@@ -232,8 +233,9 @@ chapter1: [
   { type:"text", speaker:"黄仁勋", expression:"surprised", text:"……" },
   { type:"text", speaker:"黄仁勋", expression:"shy",
     text:"（轻笑）……我通常凌晨三点。\n不要学我。" },
-  { type:"narration", text:"你起身告别。走廊里，你回头看了一眼——\n他还坐在窗边，望着台北夜景，手里握着那杯早已凉透的茶。" },
-  { type:"narration", text:"那个背影，你很久很久之后还记得。" },
+  { type:"narration", text:"你起身告别。\n走廊里，你忍不住回头看了一眼——" },
+  { type:"narration", text:"他还坐在窗边。\n手里握着那杯早就凉透的茶。" },
+  { type:"narration", text:"……这个背影，你后来记了很久。" },
   { type:"goto", target:"interlude_dm" },
 ],
 
