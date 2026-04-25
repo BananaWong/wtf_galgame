@@ -562,6 +562,95 @@ chapter3_boardroom: [
     text:"……回去休息。\nGTC 还有十天，我们要做的事情还很多。" },
   { type:"narration", text:"你点头，转身走出办公室。\n关门的瞬间，你回头看了一眼——\n他正坐在桌前，把那只 NV1 玻璃柜重新拉开，对着空出来的位置发了一会儿呆。" },
 
+  { type:"goto", target:"interlude_birthday" },
+],
+
+/* ================================================================
+   过场：二月十七日 · 偷偷的生日
+   ================================================================ */
+interlude_birthday: [
+  { type:"scene", place:"NVIDIA 总部 · 你的工位", time:"上午 10:08", weather:"小雨",
+    bg:"scene-lobby", mood:"calm", clearChars:true },
+
+  { type:"narration", text:"二月十七日。\n你登入工位电脑，日历上有一行小字提醒——\n但不是会议，是你自己之前偷偷做了一个标记。" },
+  { type:"narration", text:"「J's bday」。" },
+  { type:"narration", text:"你是一个月前在维基百科上看到的：\n黄仁勋。1963 年 2 月 17 日，台南出生。" },
+  { type:"narration", text:"当时你看到这条信息，第一反应是——\n他从来不庆祝。" },
+  { type:"narration", text:"上次开年会的时候你听 Colette 提过：「他这辈子没在公司过过生日。」\n据说是因为创业头几年压力太大，他索性把这个日子抹掉了。" },
+
+  { type:"choice", choices:[
+    { text:"「（什么都不做。他不会想被打扰。）」", affection:0 },
+    { text:"「……我去买个小蛋糕。」",             affection:8, flag:{key:"birthday_cake",value:true} },
+    { text:"「写张匿名生日卡放他桌上。」",       affection:6, flag:{key:"birthday_card",value:true} },
+  ]},
+
+  /* —— 中午外出买蛋糕（如果选了 cake，则进入这段）—— */
+  { type:"scene", place:"圣何塞 · Maison K 法式糕点", time:"中午 12:50", weather:"小雨转晴",
+    bg:"scene-cafe", mood:"calm" },
+  { type:"narration", text:"你撑着伞走进一家很小的法式糕点店。\n柜台后是一个戴老花镜的老太太。" },
+  { type:"text", speaker:"老太太", text:"What can I get you, dear?" },
+  { type:"text", speaker:"你", text:"……一个最小号的，不要写字，奶油不要太多。" },
+  { type:"text", speaker:"老太太", text:"For yourself?" },
+  { type:"text", speaker:"你", text:"……不是。\n是给一个不喜欢被庆祝的人。" },
+  { type:"text", speaker:"老太太", text:"Ahh.\n（笑了笑）那种人最需要一个小蛋糕。" },
+  { type:"narration", text:"她从冰柜里拿出一个手掌大小的栗子蒙布朗，认真地包好。\n包装纸上盖了一个小小的椭圆印章——是那家店的 logo，一只画得有点歪的猫。" },
+
+  /* —— 晚上回到他办公室门口 —— */
+  { type:"scene", place:"NVIDIA 总部 · 顶层办公室门外", time:"深夜 22:36", weather:"晴",
+    bg:"scene-office-night", mood:"calm" },
+
+  { type:"narration", text:"你犹豫了很久，蹲在他办公室门外的走廊里。\n蛋糕装在纸盒里，已经凉了。" },
+  { type:"narration", text:"你不敢敲门——\n你怕他正在 debug、在开会、或者只是在想事情。" },
+  { type:"narration", text:"于是你只是把蛋糕放在门口，转身离开。" },
+
+  { type:"narration", text:"——但是，你刚走出三步，门就开了。" },
+
+  { type:"char", id:"jensen", expression:"surprised", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"黄仁勋", expression:"surprised",
+    text:"……" },
+  { type:"narration", text:"他低头，看见地上的小盒子。" },
+  { type:"narration", text:"然后抬头，看着已经走到走廊尽头、正在转身的你。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"（很轻）……你怎么知道？" },
+  { type:"text", speaker:"你", text:"……（一时不知道怎么说）我是工程师，查过您的 wiki。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"……（蹲下身，慢慢拿起小盒子）\n……整整三十年。\n没有人在公司给我送过蛋糕。" },
+
+  { type:"narration", text:"他把盒子托在手里，像捧一只很轻的鸟。\n你有点想哭，但忍住了。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"loving",
+    text:"进来。\n陪我吃完。" },
+
+  { type:"scene", place:"NVIDIA 总部 · 顶层办公室", time:"深夜 22:55", weather:"晴",
+    bg:"scene-office-night", mood:"romantic" },
+  { type:"narration", text:"他把蛋糕放在桌上，从抽屉里拿出两把塑料叉子。\n——你忍不住笑了。" },
+  { type:"text", speaker:"你", text:"……您抽屉里居然有塑料叉子。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（慢慢辩解）以前出差经常吃外卖。" },
+  { type:"narration", text:"你们坐在沙发上，把那个手掌大的小蒙布朗，一人一口分着吃。\n窗外是台北 101 的灯。\n房间里只有蛋糕的甜味和你心跳的声音。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"……我有一件东西，从一年前就想送出去，但一直没找到合适的时机。" },
+  { type:"text", speaker:"你", text:"嗯？" },
+  { type:"narration", text:"他从书桌的最下层抽屉拿出一个小小的红木盒子。\n盒子打开——\n是一只很旧的银色钥匙。" },
+  { type:"text", speaker:"黄仁勋", expression:"loving",
+    text:"……这是 1993 年我们第一间办公室的钥匙。\n那间办公室早就没了，但这把钥匙我一直留着。" },
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……今天，给你。\n你帮我开着这家公司里的下一扇门。" },
+  { type:"flag", key:"first_office_key", value:true },
+
+  { type:"choice", choices:[
+    { text:"「我一定好好保管。」",                 affection:9  },
+    { text:"「……这分量太重了。」",                 affection:6  },
+    { text:"「那您一定要陪我，一起开下一扇门。」", affection:14, flag:{key:"birthday_promise",value:true} },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"……（轻声）一定。" },
+  { type:"narration", text:"他把那把银色的小钥匙放进你掌心。\n钥匙比你想象的要轻，但你掌心却像握住了某种特别沉的东西。" },
+  { type:"narration", text:"窗外的雨不知什么时候停了。\n台北的灯光像无数只小烛火，在远处静静摇曳。" },
+  { type:"narration", text:"——这一年的二月十七日。\n是 NVIDIA 历史上，第一次有人为黄仁勋庆祝生日。" },
   { type:"goto", target:"chapter4_gtc_debug" },
 ],
 
