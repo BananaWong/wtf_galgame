@@ -484,6 +484,65 @@ chapter4_gtc_debug: [
   { type:"text", speaker:"你", text:"（笑出来）……那我帮您挡镜头。" },
   { type:"text", speaker:"黄仁勋", expression:"smile", text:"不用，你负责点单就行。" },
 
+  /* —— 早餐店场景扩展 —— */
+  { type:"scene", place:"会场附近 · 24h 早餐店「永和阿嬷」", time:"清晨 06:18", weather:"破晓",
+    bg:"scene-cafe", mood:"calm" },
+  { type:"narration", text:"巷口有一家小小的早餐店，玻璃门上贴着褪色的红色「永和」二字。\n空气里全是豆浆和油条的香味。" },
+  { type:"narration", text:"老板娘是个台湾阿嬷，看起来六十多岁。\n她抬头看了一眼，愣了两秒——" },
+
+  { type:"char", id:"jensen", expression:"smile", pose:"stand", slot:"center", placeholder:true },
+  { type:"text", speaker:"老板娘", text:"……黄……总？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"阿嬷，是我。\n两套烧饼油条，一杯热豆浆，一杯——（看你）你喝甜的还是咸的？" },
+  { type:"text", speaker:"你", text:"咸的。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"——咸豆浆。要加榨菜。" },
+  { type:"text", speaker:"老板娘", text:"（紧张）那个……签个名可以吗？给我孙子，他在念资讯系。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"当然可以。给我一支笔。" },
+
+  { type:"narration", text:"他在阿嬷递过来的便利贴上签了名，又写了一句话：\n「不必读完所有论文，要读完一篇就懂。」" },
+  { type:"text", speaker:"黄仁勋", expression:"smile", text:"——给他的。" },
+  { type:"text", speaker:"老板娘", text:"……谢谢黄总，谢谢黄总。" },
+
+  { type:"narration", text:"你们在角落坐下。\n外面天色慢慢从墨蓝变成淡橙。\n烧饼很烫，掰开的时候有热气冒出来。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"（咬了一口）……还是这个味。" },
+  { type:"text", speaker:"你", text:"您小时候在哪里念书？" },
+  { type:"text", speaker:"黄仁勋", expression:"sad",
+    text:"九岁去美国，之前在台南。\n每天早上我妈妈带我去吃这种早餐，五块台币。" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"我父亲那时候是化学工程师。\n他觉得我跑去做芯片是「玩具」。" },
+  { type:"text", speaker:"你", text:"现在呢？" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh",
+    text:"现在我们公司被写进经济学课本，他终于不再说我玩玩具了。\n他改说——我玩的是「比较大的玩具」。" },
+
+  { type:"narration", text:"你笑了。\n他低头喝豆浆，喝得很慢。" },
+
+  { type:"text", speaker:"黄仁勋", expression:"thinking",
+    text:"……其实昨晚那个 bug，不只是 1998 年的我留的。" },
+  { type:"text", speaker:"你", text:"嗯？" },
+  { type:"text", speaker:"黄仁勋", expression:"sad",
+    text:"那段代码，我当时是在父亲住院期间写的。\n所以我后来一直没回去看它——避着它。" },
+  { type:"text", speaker:"你", text:"……" },
+  { type:"text", speaker:"黄仁勋", expression:"smile",
+    text:"今天是因为有你坐在旁边，我才敢翻出来看。\n谢谢。" },
+
+  { type:"choice", choices:[
+    { text:"「……以后您都不用一个人翻。」",     affection:14, flag:{key:"breakfast_promise",value:true} },
+    { text:"「您应该早点告诉我的。」",           affection:8 },
+    { text:"「（伸手轻轻拍了一下他的手背）」", affection:12, flag:{key:"breakfast_touch",value:true} },
+  ]},
+
+  { type:"text", speaker:"黄仁勋", expression:"shy",
+    text:"……（很轻地点了点头）" },
+  { type:"narration", text:"窗外的天，慢慢全亮了。\n阿嬷又上了一笼小笼包，说是请客。" },
+  { type:"text", speaker:"老板娘", text:"黄总你太瘦了，多吃一点。" },
+  { type:"text", speaker:"黄仁勋", expression:"laugh", text:"阿嬷，这十年大家都说我太瘦。" },
+  { type:"narration", text:"小笼包热腾腾的，桌子小到你和他的胳膊会偶尔碰到。\n你们都没移开。" },
+
+  { type:"narration", text:"（早餐结束后……）" },
   { type:"narration", text:"天亮前，你们在一家小小的早餐店里吃完了一整套烧饼油条。\n他给你讲了 1993 年的台湾，讲了他父亲是怎么看待他「不务正业」创业的。\n你第一次听到他讲家人——那种讲法，是只有对信任的人，才会有的讲法。" },
   { type:"flag", key:"breakfast_together", value:true },
   { type:"goto", target:"interlude_colette" },
